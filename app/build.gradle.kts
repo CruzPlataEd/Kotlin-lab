@@ -42,6 +42,9 @@ android {
 }
 
 dependencies {
+    //GSON
+    implementation(libs.google.gson)
+
     // ViewModel y LiveData
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)

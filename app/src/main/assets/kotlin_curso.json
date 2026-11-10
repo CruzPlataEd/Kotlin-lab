@@ -1,0 +1,5156 @@
+{
+  "version": "2.0.0",
+  "curso": {
+    "id": "kotlin-base",
+    "nombre": "Curso de Kotlin",
+    "descripcion": "Curso para personas con nociones previas de programación.",
+    "sesiones": 12,
+    "horasTotales": 27.0,
+    "idioma": "es",
+    "presentacion": {
+      "titulo": "Aprende Kotlin a tu nivel",
+      "subtitulo": "Teoría corta, ejercicios con pistas y un registro claro de lo que ya hiciste y lo que te falta.",
+      "codigoDemo": "val nombre: String? = null\nprintln(nombre ?: \"Invitado\")\n// Invitado"
+    },
+    "proyectoFinalId": "pf"
+  },
+  "catalogos": {
+    "niveles": [
+      {
+        "id": "repaso",
+        "nombre": "Repaso",
+        "formato": "Prueba rápida de 5 preguntas; con 80% o más se valida el módulo sin repetir la teoría."
+      },
+      {
+        "id": "esencial",
+        "nombre": "Esencial",
+        "formato": "Teoría completa por secciones; los ejercicios en clase son obligatorios antes de las tareas."
+      },
+      {
+        "id": "intermedio",
+        "nombre": "Intermedio",
+        "formato": "Teoría breve y ejercicios guiados con más pistas."
+      }
+    ],
+    "dificultades": [
+      {
+        "id": "basico",
+        "nombre": "Básico",
+        "barras": 1,
+        "ayuda": {
+          "codigoInicial": "plantilla_casi_completa",
+          "pistasDesdeIntento": 0,
+          "solucionDesdeIntento": 1,
+          "requiereSolucionPublicada": false
+        }
+      },
+      {
+        "id": "intermedio",
+        "nombre": "Intermedio",
+        "barras": 2,
+        "ayuda": {
+          "codigoInicial": "esqueleto_parcial",
+          "pistasDesdeIntento": 1,
+          "solucionDesdeIntento": 2,
+          "requiereSolucionPublicada": false
+        }
+      },
+      {
+        "id": "reto",
+        "nombre": "Reto",
+        "barras": 3,
+        "ayuda": {
+          "codigoInicial": "vacio",
+          "pistasDesdeIntento": 2,
+          "solucionDesdeIntento": null,
+          "requiereSolucionPublicada": true
+        }
+      }
+    ],
+    "tiposEjercicio": [
+      {
+        "id": "en_clase",
+        "nombre": "En clase"
+      },
+      {
+        "id": "tarea",
+        "nombre": "Tarea"
+      },
+      {
+        "id": "proyecto",
+        "nombre": "Proyecto"
+      }
+    ],
+    "categoriasGlosario": [
+      {
+        "id": "fundamentos",
+        "nombre": "Fundamentos"
+      },
+      {
+        "id": "control_de_flujo",
+        "nombre": "Control de flujo"
+      },
+      {
+        "id": "funciones",
+        "nombre": "Funciones"
+      },
+      {
+        "id": "null_safety",
+        "nombre": "Null safety"
+      },
+      {
+        "id": "colecciones",
+        "nombre": "Colecciones"
+      },
+      {
+        "id": "lambdas",
+        "nombre": "Lambdas"
+      },
+      {
+        "id": "poo",
+        "nombre": "POO"
+      },
+      {
+        "id": "clases_especiales",
+        "nombre": "Clases especiales"
+      },
+      {
+        "id": "errores",
+        "nombre": "Errores"
+      },
+      {
+        "id": "genericos",
+        "nombre": "Genéricos"
+      },
+      {
+        "id": "corrutinas",
+        "nombre": "Corrutinas"
+      }
+    ],
+    "tiposPrueba": [
+      {
+        "id": "compila",
+        "descripcion": "El código compila sin errores."
+      },
+      {
+        "id": "salida_exacta",
+        "descripcion": "La salida estándar es igual a 'esperado' (ignorando espacios finales). 'entrada' opcional se envía por stdin."
+      },
+      {
+        "id": "salida_contiene",
+        "descripcion": "La salida contiene 'esperado'. 'entrada' opcional se envía por stdin."
+      },
+      {
+        "id": "codigo_contiene",
+        "descripcion": "El código fuente contiene 'valor'."
+      },
+      {
+        "id": "codigo_no_contiene",
+        "descripcion": "El código fuente no contiene 'valor'."
+      }
+    ],
+    "bloquesContenido": [
+      "texto",
+      "codigo",
+      "nota",
+      "lista",
+      "tabla"
+    ],
+    "lenguajesPrevios": [
+      {
+        "id": "java",
+        "nombre": "Java"
+      },
+      {
+        "id": "python",
+        "nombre": "Python"
+      },
+      {
+        "id": "javascript",
+        "nombre": "JavaScript"
+      },
+      {
+        "id": "csharp",
+        "nombre": "C#"
+      },
+      {
+        "id": "ninguno",
+        "nombre": "Ninguno"
+      }
+    ],
+    "estadosProgreso": [
+      {
+        "id": "pendiente",
+        "nombre": "Falta"
+      },
+      {
+        "id": "en_curso",
+        "nombre": "En curso"
+      },
+      {
+        "id": "completado",
+        "nombre": "Completado"
+      }
+    ],
+    "atajosBase": [
+      "{ }",
+      "( )",
+      "\"",
+      "=",
+      "."
+    ]
+  },
+  "modulos": [
+    {
+      "id": "m01",
+      "numero": 1,
+      "nombre": "Introducción, entorno y primer programa",
+      "nivel": "repaso",
+      "duracionHoras": 1.5,
+      "objetivo": "Ejecutar el primer programa y entender dónde se usa Kotlin.",
+      "secciones": [
+        {
+          "id": "m01-s1",
+          "titulo": "¿Qué es Kotlin?",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "Kotlin es un lenguaje creado por JetBrains, de tipado estático, que corre sobre la JVM y es 100% interoperable con Java. Es el lenguaje oficial para Android y también se usa en backend (Spring, Ktor) y en multiplataforma (Kotlin Multiplatform). Sus señas de identidad: sintaxis concisa, seguridad ante nulos y soporte fuerte para programación funcional."
+            }
+          ],
+          "conceptoIds": []
+        },
+        {
+          "id": "m01-s2",
+          "titulo": "Primer programa",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "// Punto de entrada del programa\nfun main() {\n    println(\"Hola, Kotlin\")\n    print(\"Sin salto de línea\")\n}\n\n/* Comentario\n   de varias líneas */"
+            },
+            {
+              "tipo": "nota",
+              "texto": "No se necesita punto y coma, no hace falta una clase para main, y println está disponible sin importar nada."
+            }
+          ],
+          "conceptoIds": []
+        }
+      ],
+      "erroresComunes": [
+        "Escribir main dentro de una clase como en Java (no es necesario).",
+        "Poner punto y coma al final de cada línea (funciona, pero no es idiomático)."
+      ],
+      "conceptos": [],
+      "ejercicios": [
+        "e1_1",
+        "e1_2"
+      ],
+      "recursos": [
+        "r-playground",
+        "r-intellij"
+      ],
+      "pruebaRapida": {
+        "umbralAprobacion": 0.8,
+        "preguntas": [
+          {
+            "pregunta": "¿Qué función es el punto de entrada de un programa Kotlin?",
+            "opciones": [
+              "start()",
+              "main()",
+              "init()",
+              "run()"
+            ],
+            "correcta": 1,
+            "explicacion": "fun main() es el punto de entrada.",
+            "id": "m01-q1",
+            "codigo": null,
+            "conceptoId": null
+          },
+          {
+            "pregunta": "¿Sobre qué plataforma corre Kotlin principalmente?",
+            "opciones": [
+              "JVM",
+              ".NET",
+              "Python VM",
+              "Solo navegador"
+            ],
+            "correcta": 0,
+            "explicacion": "Kotlin corre sobre la JVM y es interoperable con Java.",
+            "id": "m01-q2",
+            "codigo": null,
+            "conceptoId": null
+          },
+          {
+            "pregunta": "¿Qué diferencia hay entre print y println?",
+            "opciones": [
+              "Ninguna",
+              "println agrega salto de línea",
+              "print agrega salto de línea",
+              "println solo imprime números"
+            ],
+            "correcta": 1,
+            "explicacion": "println agrega un salto de línea al final.",
+            "id": "m01-q3",
+            "codigo": null,
+            "conceptoId": null
+          },
+          {
+            "pregunta": "¿Es obligatorio el punto y coma al final de cada línea?",
+            "opciones": [
+              "Sí",
+              "No",
+              "Solo en funciones",
+              "Solo en clases"
+            ],
+            "correcta": 1,
+            "explicacion": "En Kotlin no es necesario.",
+            "id": "m01-q4",
+            "codigo": null,
+            "conceptoId": null
+          },
+          {
+            "pregunta": "¿Necesita main estar dentro de una clase?",
+            "opciones": [
+              "Sí, siempre",
+              "No",
+              "Solo en Android",
+              "Solo si usa println"
+            ],
+            "correcta": 1,
+            "explicacion": "main puede ser una función de nivel superior.",
+            "id": "m01-q5",
+            "codigo": null,
+            "conceptoId": null
+          }
+        ]
+      },
+      "nombreCorto": "Introducción y primer programa",
+      "atajos": [
+        "println( )",
+        "fun main"
+      ]
+    },
+    {
+      "id": "m02",
+      "numero": 2,
+      "nombre": "Variables, tipos y strings",
+      "nivel": "repaso",
+      "duracionHoras": 2,
+      "objetivo": "Dominar val/var, la inferencia de tipos y las plantillas de texto.",
+      "secciones": [
+        {
+          "id": "m02-s1",
+          "titulo": "val vs var",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val nombre = \"Ana\"      // inmutable. Preferirla siempre que se pueda\nvar edad = 25           // mutable\nedad = 26               // OK\n// nombre = \"Luis\"      // Error de compilación"
+            },
+            {
+              "tipo": "nota",
+              "texto": "Regla de oro: usar val por defecto y var solo cuando realmente se necesite cambiar el valor."
+            }
+          ],
+          "conceptoIds": [
+            "g-val",
+            "g-var"
+          ]
+        },
+        {
+          "id": "m02-s2",
+          "titulo": "Tipos básicos e inferencia",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val entero: Int = 10\nval largo: Long = 10_000_000_000L\nval decimal: Double = 3.14\nval flotante: Float = 2.5f\nval booleano: Boolean = true\nval caracter: Char = 'K'\nval texto: String = \"Kotlin\"\n\nval inferido = 42   // Kotlin deduce Int"
+            }
+          ],
+          "conceptoIds": [
+            "g-inferencia"
+          ]
+        },
+        {
+          "id": "m02-s3",
+          "titulo": "Conversiones (no son implícitas)",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val a: Int = 5\n// val b: Long = a        // Error: no hay conversión automática\nval b: Long = a.toLong()\nval numero = \"123\".toInt()\nval seguro = \"abc\".toIntOrNull()   // null en vez de lanzar excepción"
+            }
+          ],
+          "conceptoIds": [
+            "g-conversion"
+          ]
+        },
+        {
+          "id": "m02-s4",
+          "titulo": "Strings y plantillas",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val producto = \"Café\"\nval precio = 45.5\nprintln(\"El $producto cuesta $$precio\")\nprintln(\"Con IVA: ${precio * 1.16}\")\nprintln(\"Longitud: ${producto.length}\")\n\n// Raw strings (multilínea)\nval menu = \"\"\"\n    1. Café\n    2. Té\n\"\"\".trimIndent()"
+            },
+            {
+              "tipo": "texto",
+              "texto": "Métodos útiles: uppercase(), lowercase(), trim(), split(), contains(), replace(), substring(), startsWith(), isBlank()."
+            }
+          ],
+          "conceptoIds": [
+            "g-string-template",
+            "g-raw-string"
+          ]
+        }
+      ],
+      "erroresComunes": [
+        "Intentar reasignar un val.",
+        "Esperar conversión automática entre Int y Long.",
+        "Usar + para concatenar cuando una plantilla es más clara."
+      ],
+      "conceptos": [
+        "g-val",
+        "g-var",
+        "g-inferencia",
+        "g-string-template",
+        "g-raw-string",
+        "g-conversion"
+      ],
+      "ejercicios": [
+        "e2_1",
+        "e2_2",
+        "e2_3"
+      ],
+      "recursos": [],
+      "pruebaRapida": {
+        "umbralAprobacion": 0.8,
+        "preguntas": [
+          {
+            "pregunta": "¿Qué palabra declara una variable que no se puede reasignar?",
+            "opciones": [
+              "var",
+              "val",
+              "const var",
+              "let"
+            ],
+            "correcta": 1,
+            "explicacion": "val es de solo lectura.",
+            "id": "m02-q1",
+            "codigo": null,
+            "conceptoId": "g-val"
+          },
+          {
+            "pregunta": "¿Qué devuelve este código?",
+            "opciones": [
+              "0",
+              "Lanza excepción",
+              "null",
+              "\"abc\""
+            ],
+            "correcta": 2,
+            "explicacion": "toIntOrNull devuelve null si no puede convertir.",
+            "id": "m02-q2",
+            "codigo": "\"abc\".toIntOrNull()",
+            "conceptoId": "g-conversion"
+          },
+          {
+            "pregunta": "¿Compila este código si a es Int?",
+            "opciones": [
+              "Sí",
+              "No",
+              "Solo con var",
+              "Solo si a es positivo"
+            ],
+            "correcta": 1,
+            "explicacion": "No hay conversión implícita; usa a.toLong().",
+            "id": "m02-q3",
+            "codigo": "val b: Long = a",
+            "conceptoId": "g-conversion"
+          },
+          {
+            "pregunta": "¿Cómo insertas una expresión dentro de un String?",
+            "opciones": [
+              "#{expr}",
+              "${expr}",
+              "%expr%",
+              "{{expr}}"
+            ],
+            "correcta": 1,
+            "explicacion": "Las plantillas usan ${expresión}.",
+            "id": "m02-q4",
+            "codigo": null,
+            "conceptoId": "g-string-template"
+          },
+          {
+            "pregunta": "¿Qué tipo infiere Kotlin aquí?",
+            "opciones": [
+              "Long",
+              "Double",
+              "Int",
+              "Number"
+            ],
+            "correcta": 2,
+            "explicacion": "Un entero literal se infiere como Int.",
+            "id": "m02-q5",
+            "codigo": "val x = 42",
+            "conceptoId": "g-inferencia"
+          }
+        ]
+      },
+      "nombreCorto": "Variables, tipos y strings",
+      "atajos": [
+        "$",
+        "${ }",
+        "\"\"\"",
+        ":"
+      ]
+    },
+    {
+      "id": "m03",
+      "numero": 3,
+      "nombre": "Control de flujo: if, when, rangos y ciclos",
+      "nivel": "repaso",
+      "duracionHoras": 2,
+      "objetivo": "Usar if y when como expresiones y dominar rangos.",
+      "secciones": [
+        {
+          "id": "m03-s1",
+          "titulo": "if como expresión",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "Kotlin no tiene operador ternario: if devuelve un valor."
+            },
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val edad = 20\nval estado = if (edad >= 18) \"Mayor de edad\" else \"Menor de edad\""
+            }
+          ],
+          "conceptoIds": [
+            "g-if-expresion"
+          ]
+        },
+        {
+          "id": "m03-s2",
+          "titulo": "when (reemplaza a switch)",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val dia = 3\nval nombreDia = when (dia) {\n    1 -> \"Lunes\"\n    2 -> \"Martes\"\n    3 -> \"Miércoles\"\n    6, 7 -> \"Fin de semana\"\n    else -> \"Día inválido\"\n}\n\nval calificacion = 85\nval letra = when (calificacion) {\n    in 90..100 -> \"A\"\n    in 80..89 -> \"B\"\n    in 70..79 -> \"C\"\n    else -> \"Reprobado\"\n}\n\n// when sin argumento, como cadena de if-else\nval temp = 30\nwhen {\n    temp > 35 -> println(\"Mucho calor\")\n    temp > 25 -> println(\"Calor\")\n    else -> println(\"Agradable\")\n}"
+            }
+          ],
+          "conceptoIds": [
+            "g-when"
+          ]
+        },
+        {
+          "id": "m03-s3",
+          "titulo": "Rangos y ciclos",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "for (i in 1..5) print(i)                 // 12345\nfor (i in 1 until 5) print(i)            // 1234\nfor (i in 10 downTo 1 step 2) print(i)   // 108642\n\nval frutas = listOf(\"Manzana\", \"Pera\", \"Uva\")\nfor (fruta in frutas) println(fruta)\nfor ((indice, fruta) in frutas.withIndex()) println(\"$indice: $fruta\")\n\nvar contador = 0\nwhile (contador < 3) { contador++ }\ndo { contador-- } while (contador > 0)"
+            }
+          ],
+          "conceptoIds": [
+            "g-rangos"
+          ]
+        },
+        {
+          "id": "m03-s4",
+          "titulo": "Etiquetas para romper ciclos anidados",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "externo@ for (i in 1..3) {\n    for (j in 1..3) {\n        if (j == 2) break@externo\n        println(\"$i, $j\")\n    }\n}"
+            }
+          ],
+          "conceptoIds": [
+            "g-etiquetas"
+          ]
+        }
+      ],
+      "erroresComunes": [
+        "Buscar el operador ternario ? : (no existe; usar if).",
+        "Olvidar else cuando when se usa como expresión.",
+        "Confundir .. (incluye el final) con until (lo excluye)."
+      ],
+      "conceptos": [
+        "g-if-expresion",
+        "g-when",
+        "g-rangos",
+        "g-etiquetas"
+      ],
+      "ejercicios": [
+        "e3_1",
+        "e3_2",
+        "e3_3",
+        "e3_4"
+      ],
+      "recursos": [],
+      "pruebaRapida": {
+        "umbralAprobacion": 0.8,
+        "preguntas": [
+          {
+            "pregunta": "¿Kotlin tiene operador ternario ? :?",
+            "opciones": [
+              "Sí",
+              "No, se usa if como expresión",
+              "Solo en when",
+              "Solo con val"
+            ],
+            "correcta": 1,
+            "explicacion": "if devuelve un valor.",
+            "id": "m03-q1",
+            "codigo": null,
+            "conceptoId": "g-if-expresion"
+          },
+          {
+            "pregunta": "¿Qué imprime este código?",
+            "opciones": [
+              "1234",
+              "123",
+              "234",
+              "0123"
+            ],
+            "correcta": 1,
+            "explicacion": "until excluye el final.",
+            "id": "m03-q2",
+            "codigo": "for (i in 1 until 4) print(i)",
+            "conceptoId": "g-rangos"
+          },
+          {
+            "pregunta": "¿Qué reemplaza a switch en Kotlin?",
+            "opciones": [
+              "select",
+              "match",
+              "when",
+              "case"
+            ],
+            "correcta": 2,
+            "explicacion": "when es la selección múltiple de Kotlin.",
+            "id": "m03-q3",
+            "codigo": null,
+            "conceptoId": "g-when"
+          },
+          {
+            "pregunta": "¿Qué valores recorre este rango?",
+            "opciones": [
+              "10, 7, 4, 1",
+              "10, 9, 8...",
+              "1, 4, 7, 10",
+              "Error"
+            ],
+            "correcta": 0,
+            "explicacion": "Recorre de 10 a 1 saltando de 3 en 3.",
+            "id": "m03-q4",
+            "codigo": "10 downTo 1 step 3",
+            "conceptoId": "g-rangos"
+          },
+          {
+            "pregunta": "¿Cuándo es obligatorio else en when?",
+            "opciones": [
+              "Nunca",
+              "Siempre",
+              "Cuando when se usa como expresión y no es exhaustivo",
+              "Solo con rangos"
+            ],
+            "correcta": 2,
+            "explicacion": "Como expresión debe cubrir todos los casos.",
+            "id": "m03-q5",
+            "codigo": null,
+            "conceptoId": "g-when"
+          }
+        ]
+      },
+      "nombreCorto": "Control de flujo",
+      "atajos": [
+        "..",
+        "until",
+        "downTo",
+        "->",
+        "in"
+      ]
+    },
+    {
+      "id": "m04",
+      "numero": 4,
+      "nombre": "Funciones",
+      "nivel": "esencial",
+      "duracionHoras": 2.5,
+      "objetivo": "Escribir funciones idiomáticas con parámetros por defecto, nombrados y funciones de extensión.",
+      "secciones": [
+        {
+          "id": "m04-s1",
+          "titulo": "Declaración",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "// Forma completa\nfun sumar(a: Int, b: Int): Int {\n    return a + b\n}\n\n// Función de expresión única\nfun multiplicar(a: Int, b: Int) = a * b\n\n// Sin valor de retorno útil (Unit es como void)\nfun saludar(nombre: String): Unit {\n    println(\"Hola, $nombre\")\n}"
+            }
+          ],
+          "conceptoIds": [
+            "g-unit"
+          ]
+        },
+        {
+          "id": "m04-s2",
+          "titulo": "Parámetros por defecto y nombrados",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "Eliminan la necesidad de sobrecargar funciones."
+            },
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "fun crearUsuario(nombre: String, rol: String = \"invitado\", activo: Boolean = true) =\n    \"$nombre - $rol - $activo\"\n\ncrearUsuario(\"Ana\")\ncrearUsuario(\"Luis\", activo = false)\ncrearUsuario(rol = \"admin\", nombre = \"Eva\")"
+            }
+          ],
+          "conceptoIds": [
+            "g-parametros"
+          ]
+        },
+        {
+          "id": "m04-s3",
+          "titulo": "vararg",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "fun promedio(vararg numeros: Double): Double = numeros.sum() / numeros.size\npromedio(8.0, 9.5, 10.0)"
+            }
+          ],
+          "conceptoIds": [
+            "g-vararg"
+          ]
+        },
+        {
+          "id": "m04-s4",
+          "titulo": "Funciones de extensión",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "Agregan funciones a clases existentes sin heredar de ellas."
+            },
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "fun String.esPalindromo(): Boolean {\n    val limpio = this.lowercase().replace(\" \", \"\")\n    return limpio == limpio.reversed()\n}\n\n\"Anita lava la tina\".esPalindromo()  // true\n\nfun Int.esPar() = this % 2 == 0"
+            },
+            {
+              "tipo": "nota",
+              "texto": "Las funciones de extensión son de lo más usado en Kotlin real; vale la pena dedicarles tiempo en clase."
+            }
+          ],
+          "conceptoIds": [
+            "g-extension"
+          ]
+        },
+        {
+          "id": "m04-s5",
+          "titulo": "Funciones de nivel superior y locales",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "En Kotlin las funciones pueden vivir fuera de las clases (top-level) y también dentro de otras funciones."
+            }
+          ],
+          "conceptoIds": []
+        }
+      ],
+      "erroresComunes": [
+        "Crear sobrecargas en lugar de usar parámetros por defecto.",
+        "Mezclar argumentos posicionales después de nombrados."
+      ],
+      "conceptos": [
+        "g-unit",
+        "g-parametros",
+        "g-vararg",
+        "g-extension"
+      ],
+      "ejercicios": [
+        "e4_1",
+        "e4_2",
+        "e4_3",
+        "e4_4"
+      ],
+      "recursos": [],
+      "nombreCorto": "Funciones",
+      "atajos": [
+        "vararg",
+        ":",
+        "return"
+      ],
+      "pruebaRapida": null
+    },
+    {
+      "id": "m05",
+      "numero": 5,
+      "nombre": "Null safety",
+      "nivel": "esencial",
+      "duracionHoras": 2.5,
+      "objetivo": "Entender el sistema de nulabilidad, la característica más importante de Kotlin.",
+      "secciones": [
+        {
+          "id": "m05-s1",
+          "titulo": "Idea clave",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "En Kotlin un tipo normal no puede contener null. Para permitirlo hay que declararlo con ?. Esto elimina la mayoría de los NullPointerException en tiempo de compilación."
+            },
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "var nombre: String = \"Ana\"\n// nombre = null              // Error de compilación\n\nvar apodo: String? = null     // tipo nulable"
+            }
+          ],
+          "conceptoIds": [
+            "g-nulable"
+          ]
+        },
+        {
+          "id": "m05-s2",
+          "titulo": "Operadores",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val apodo: String? = null\n\n// Llamada segura: si es null, el resultado es null\nprintln(apodo?.length)            // null\n\n// Operador Elvis: valor alternativo\nval largo = apodo?.length ?: 0    // 0\n\n// Aserción no-nula: lanza excepción si es null (evitarla)\n// val x = apodo!!.length\n\n// let: ejecutar código solo si no es null\napodo?.let { println(\"El apodo es $it\") }"
+            }
+          ],
+          "conceptoIds": [
+            "g-llamada-segura",
+            "g-elvis",
+            "g-asercion"
+          ]
+        },
+        {
+          "id": "m05-s3",
+          "titulo": "Smart cast",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "fun imprimirLargo(texto: String?) {\n    if (texto != null) {\n        println(texto.length)   // Kotlin ya sabe que no es null\n    }\n}"
+            }
+          ],
+          "conceptoIds": [
+            "g-smart-cast"
+          ]
+        },
+        {
+          "id": "m05-s4",
+          "titulo": "Elvis con return o throw",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "fun procesar(entrada: String?) {\n    val valor = entrada ?: return\n    val numero = valor.toIntOrNull() ?: throw IllegalArgumentException(\"No es número\")\n    println(numero * 2)\n}"
+            }
+          ],
+          "conceptoIds": [
+            "g-elvis"
+          ]
+        },
+        {
+          "id": "m05-s5",
+          "titulo": "lateinit",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "Para propiedades var no nulas que se inicializan después (común en Android y pruebas)."
+            },
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "lateinit var configuracion: String"
+            },
+            {
+              "tipo": "texto",
+              "texto": "En una clase se ve así: la propiedad se declara sin valor y se asigna antes de usarla."
+            },
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "class Perfil {\n    lateinit var configuracion: String\n\n    fun cargar() {\n        configuracion = \"modo oscuro\"\n    }\n}"
+            },
+            {
+              "tipo": "nota",
+              "texto": "Si lees una propiedad lateinit antes de asignarla, Kotlin lanza UninitializedPropertyAccessException."
+            }
+          ],
+          "conceptoIds": [
+            "g-lateinit"
+          ]
+        }
+      ],
+      "erroresComunes": [
+        "Abusar de !!.",
+        "Declarar todo como nulable \"por si acaso\".",
+        "Olvidar que ?. encadenado devuelve un tipo nulable."
+      ],
+      "conceptos": [
+        "g-nulable",
+        "g-llamada-segura",
+        "g-elvis",
+        "g-asercion",
+        "g-smart-cast",
+        "g-lateinit"
+      ],
+      "ejercicios": [
+        "e5_1",
+        "e5_2",
+        "e5_3"
+      ],
+      "recursos": [
+        "r-null-safety"
+      ],
+      "nombreCorto": "Null safety",
+      "atajos": [
+        "?.",
+        "?:",
+        "it",
+        "!!",
+        "?"
+      ],
+      "pruebaRapida": null
+    },
+    {
+      "id": "m06",
+      "numero": 6,
+      "nombre": "Colecciones",
+      "nivel": "esencial",
+      "duracionHoras": 2.5,
+      "objetivo": "Usar listas, sets y mapas, y sus operaciones funcionales.",
+      "secciones": [
+        {
+          "id": "m06-s1",
+          "titulo": "Inmutables vs mutables",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val lista = listOf(1, 2, 3)               // solo lectura\nval mutable = mutableListOf(1, 2, 3)\nmutable.add(4)\nmutable.removeAt(0)\n\nval conjunto = setOf(\"a\", \"b\", \"a\")       // [a, b]\nval mapa = mapOf(\"MX\" to \"México\", \"AR\" to \"Argentina\")\nval mapaMutable = mutableMapOf<String, Int>()\nmapaMutable[\"manzanas\"] = 5\n\nprintln(mapa[\"MX\"])                       // México\nprintln(mapa[\"XX\"])                       // null\nprintln(mapa.getOrDefault(\"XX\", \"Desconocido\"))\n\nfor ((clave, valor) in mapa) println(\"$clave -> $valor\")\n\nval arreglo = arrayOf(1, 2, 3)            // existen, pero se prefieren listas"
+            }
+          ],
+          "conceptoIds": [
+            "g-list",
+            "g-set",
+            "g-map"
+          ]
+        },
+        {
+          "id": "m06-s2",
+          "titulo": "Operaciones funcionales",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val numeros = listOf(5, 12, 8, 3, 20, 15)\n\nnumeros.filter { it > 10 }          // [12, 20, 15]\nnumeros.map { it * 2 }              // [10, 24, 16, 6, 40, 30]\nnumeros.sum()                       // 63\nnumeros.average()                   // 10.5\nnumeros.sorted()\nnumeros.sortedDescending()\nnumeros.first { it > 10 }           // 12\nnumeros.firstOrNull { it > 100 }    // null\nnumeros.any { it > 18 }             // true\nnumeros.all { it > 0 }              // true\nnumeros.count { it % 2 == 0 }       // 3\nnumeros.reduce { acc, n -> acc + n }\nnumeros.fold(100) { acc, n -> acc + n }\nnumeros.take(2)                     // [5, 12]\nnumeros.chunked(2)                  // [[5, 12], [8, 3], [20, 15]]\nnumeros.partition { it > 10 }       // ([12, 20, 15], [5, 8, 3])\n\nval palabras = listOf(\"kotlin\", \"java\", \"swift\", \"kafka\")\npalabras.groupBy { it.first() }     // {k=[kotlin, kafka], j=[java], s=[swift]}\npalabras.associateWith { it.length }\npalabras.joinToString(\", \")"
+            }
+          ],
+          "conceptoIds": [
+            "g-filter-map",
+            "g-reduce-fold",
+            "g-groupby"
+          ]
+        },
+        {
+          "id": "m06-s3",
+          "titulo": "Encadenamiento",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val resultado = numeros\n    .filter { it % 2 != 0 }\n    .map { it * it }\n    .sortedDescending()"
+            }
+          ],
+          "conceptoIds": [
+            "g-filter-map"
+          ]
+        },
+        {
+          "id": "m06-s4",
+          "titulo": "Sequences",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "Para colecciones muy grandes o cadenas largas de operaciones se usa asSequence(), que evalúa de forma perezosa y evita crear listas intermedias."
+            }
+          ],
+          "conceptoIds": [
+            "g-sequence"
+          ]
+        }
+      ],
+      "erroresComunes": [
+        "Intentar add en una lista creada con listOf.",
+        "Usar first() cuando puede no haber resultados (usar firstOrNull())."
+      ],
+      "conceptos": [
+        "g-list",
+        "g-set",
+        "g-map",
+        "g-filter-map",
+        "g-reduce-fold",
+        "g-groupby",
+        "g-sequence"
+      ],
+      "ejercicios": [
+        "e6_1",
+        "e6_2",
+        "e6_3",
+        "e6_4"
+      ],
+      "recursos": [],
+      "nombreCorto": "Colecciones",
+      "atajos": [
+        "it",
+        "->",
+        "listOf( )",
+        "mapOf( )"
+      ],
+      "pruebaRapida": null
+    },
+    {
+      "id": "m07",
+      "numero": 7,
+      "nombre": "Lambdas, funciones de orden superior y scope functions",
+      "nivel": "esencial",
+      "duracionHoras": 2.5,
+      "objetivo": "Entender las lambdas, crear funciones de orden superior y usar scope functions.",
+      "secciones": [
+        {
+          "id": "m07-s1",
+          "titulo": "Sintaxis de lambdas y tipos de función",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val sumar: (Int, Int) -> Int = { a, b -> a + b }\nval cuadrado = { x: Int -> x * x }\nval saludar: () -> Unit = { println(\"Hola\") }\n\nsumar(2, 3)   // 5"
+            }
+          ],
+          "conceptoIds": [
+            "g-lambda"
+          ]
+        },
+        {
+          "id": "m07-s2",
+          "titulo": "Funciones de orden superior",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "fun operar(a: Int, b: Int, operacion: (Int, Int) -> Int): Int = operacion(a, b)\n\noperar(10, 5) { x, y -> x - y }   // trailing lambda\noperar(10, 5, ::multiplicar)      // referencia a función\n\nfun repetir(veces: Int, accion: (Int) -> Unit) {\n    for (i in 1..veces) accion(i)\n}\nrepetir(3) { println(\"Vuelta $it\") }   // `it` cuando hay un solo parámetro"
+            }
+          ],
+          "conceptoIds": [
+            "g-orden-superior"
+          ]
+        },
+        {
+          "id": "m07-s3",
+          "titulo": "Funciones que devuelven funciones",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "fun crearMultiplicador(factor: Int): (Int) -> Int = { it * factor }\nval triple = crearMultiplicador(3)\ntriple(7)   // 21"
+            }
+          ],
+          "conceptoIds": [
+            "g-orden-superior"
+          ]
+        },
+        {
+          "id": "m07-s4",
+          "titulo": "Scope functions",
+          "contenido": [
+            {
+              "tipo": "tabla",
+              "columnas": [
+                "Función",
+                "Referencia al objeto",
+                "Devuelve",
+                "Uso típico"
+              ],
+              "filas": [
+                [
+                  "let",
+                  "it",
+                  "resultado de la lambda",
+                  "trabajar con nulables, transformar"
+                ],
+                [
+                  "run",
+                  "this",
+                  "resultado de la lambda",
+                  "configurar y calcular algo"
+                ],
+                [
+                  "with",
+                  "this",
+                  "resultado de la lambda",
+                  "agrupar llamadas sobre un objeto"
+                ],
+                [
+                  "apply",
+                  "this",
+                  "el mismo objeto",
+                  "inicializar o configurar objetos"
+                ],
+                [
+                  "also",
+                  "it",
+                  "el mismo objeto",
+                  "efectos secundarios (logs, validaciones)"
+                ]
+              ]
+            },
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val lista = mutableListOf<String>().apply {\n    add(\"uno\")\n    add(\"dos\")\n}.also { println(\"Lista creada con ${it.size} elementos\") }\n\nval correo: String? = \"ana@mail.com\"\nval dominio = correo?.let { it.substringAfter(\"@\") }\n\nval resumen = with(lista) { \"Primero: ${first()}, total: $size\" }"
+            }
+          ],
+          "conceptoIds": [
+            "g-scope"
+          ]
+        }
+      ],
+      "erroresComunes": [
+        "Confundir apply (devuelve el objeto) con let (devuelve el resultado de la lambda).",
+        "Anidar muchas scope functions: el código se vuelve difícil de leer."
+      ],
+      "conceptos": [
+        "g-lambda",
+        "g-orden-superior",
+        "g-scope"
+      ],
+      "ejercicios": [
+        "e7_1",
+        "e7_2",
+        "e7_3",
+        "e7_4"
+      ],
+      "recursos": [
+        "r-scope"
+      ],
+      "nombreCorto": "Lambdas y scope functions",
+      "atajos": [
+        "->",
+        "it",
+        "::"
+      ],
+      "pruebaRapida": null
+    },
+    {
+      "id": "m08",
+      "numero": 8,
+      "nombre": "Programación orientada a objetos",
+      "nivel": "esencial",
+      "duracionHoras": 2.5,
+      "objetivo": "Clases, constructores, propiedades, herencia e interfaces con la sintaxis de Kotlin.",
+      "secciones": [
+        {
+          "id": "m08-s1",
+          "titulo": "Clases y constructor primario",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "class Persona(val nombre: String, var edad: Int) {\n    fun presentarse() = \"Soy $nombre y tengo $edad años\"\n}\n\nval p = Persona(\"Ana\", 30)   // no se usa `new`\np.edad = 31"
+            }
+          ],
+          "conceptoIds": [
+            "g-constructor"
+          ]
+        },
+        {
+          "id": "m08-s2",
+          "titulo": "init y constructores secundarios",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "class CuentaBancaria(val titular: String, saldoInicial: Double) {\n    var saldo = saldoInicial\n        private set             // se lee desde fuera, solo se modifica dentro\n\n    init {\n        require(saldoInicial >= 0) { \"El saldo inicial no puede ser negativo\" }\n    }\n\n    constructor(titular: String) : this(titular, 0.0)\n\n    fun depositar(monto: Double) {\n        require(monto > 0)\n        saldo += monto\n    }\n}"
+            }
+          ],
+          "conceptoIds": [
+            "g-constructor"
+          ]
+        },
+        {
+          "id": "m08-s3",
+          "titulo": "Getters y setters personalizados",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "class Rectangulo(val ancho: Double, val alto: Double) {\n    val area: Double\n        get() = ancho * alto\n\n    var etiqueta: String = \"\"\n        set(valor) { field = valor.trim().uppercase() }   // `field` es el valor interno\n}"
+            }
+          ],
+          "conceptoIds": [
+            "g-propiedades"
+          ]
+        },
+        {
+          "id": "m08-s4",
+          "titulo": "Visibilidad",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "public (por defecto), private, protected, internal (visible en el mismo módulo)."
+            }
+          ],
+          "conceptoIds": [
+            "g-visibilidad"
+          ]
+        },
+        {
+          "id": "m08-s5",
+          "titulo": "Herencia",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "Las clases son final por defecto; hay que marcarlas open para heredar."
+            },
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "open class Animal(val nombre: String) {\n    open fun sonido() = \"...\"\n}\n\nclass Perro(nombre: String) : Animal(nombre) {\n    override fun sonido() = \"Guau\"\n}"
+            }
+          ],
+          "conceptoIds": [
+            "g-open-override"
+          ]
+        },
+        {
+          "id": "m08-s6",
+          "titulo": "Clases abstractas e interfaces",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "abstract class Figura {\n    abstract fun area(): Double\n    fun describir() = \"Área: ${\"%.2f\".format(area())}\"\n}\n\nclass Circulo(val radio: Double) : Figura() {\n    override fun area() = Math.PI * radio * radio\n}\n\ninterface Imprimible {\n    fun imprimir()\n    fun encabezado() = \"=== Documento ===\"   // implementación por defecto\n}\n\nclass Factura(val total: Double) : Imprimible {\n    override fun imprimir() = println(\"${encabezado()}\\nTotal: $total\")\n}"
+            }
+          ],
+          "conceptoIds": [
+            "g-interface"
+          ]
+        },
+        {
+          "id": "m08-s7",
+          "titulo": "Polimorfismo",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val figuras: List<Figura> = listOf(Circulo(2.0), Circulo(3.5))\nfiguras.forEach { println(it.describir()) }"
+            }
+          ],
+          "conceptoIds": [
+            "g-open-override"
+          ]
+        }
+      ],
+      "erroresComunes": [
+        "Intentar heredar de una clase sin open.",
+        "Olvidar override.",
+        "Escribir getters y setters manuales como en Java cuando las propiedades ya los generan."
+      ],
+      "conceptos": [
+        "g-constructor",
+        "g-propiedades",
+        "g-open-override",
+        "g-interface",
+        "g-visibilidad"
+      ],
+      "ejercicios": [
+        "e8_1",
+        "e8_2",
+        "e8_3",
+        "e8_4"
+      ],
+      "recursos": [],
+      "nombreCorto": "Orientación a objetos",
+      "atajos": [
+        ":",
+        "override",
+        "init { }"
+      ],
+      "pruebaRapida": null
+    },
+    {
+      "id": "m09",
+      "numero": 9,
+      "nombre": "Clases especiales: data, enum, sealed, object",
+      "nivel": "esencial",
+      "duracionHoras": 2.5,
+      "objetivo": "Usar las clases propias de Kotlin que simplifican el modelado de datos.",
+      "secciones": [
+        {
+          "id": "m09-s1",
+          "titulo": "Data class",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "Genera automáticamente equals, hashCode, toString, copy y desestructuración."
+            },
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "data class Producto(val nombre: String, val precio: Double, val stock: Int = 0)\n\nval p1 = Producto(\"Laptop\", 15000.0, 5)\nval p2 = p1.copy(precio = 14000.0)\nprintln(p1)                         // Producto(nombre=Laptop, precio=15000.0, stock=5)\nprintln(p1 == Producto(\"Laptop\", 15000.0, 5))  // true\nval (nombre, precio) = p1           // desestructuración"
+            }
+          ],
+          "conceptoIds": [
+            "g-data-class"
+          ]
+        },
+        {
+          "id": "m09-s2",
+          "titulo": "Enum class",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "enum class EstadoPedido(val descripcion: String) {\n    PENDIENTE(\"En espera\"),\n    ENVIADO(\"En camino\"),\n    ENTREGADO(\"Recibido\");\n\n    fun esFinal() = this == ENTREGADO\n}\n\nval estado = EstadoPedido.ENVIADO\nprintln(estado.descripcion)\nEstadoPedido.entries.forEach { println(it.name) }"
+            }
+          ],
+          "conceptoIds": [
+            "g-enum"
+          ]
+        },
+        {
+          "id": "m09-s3",
+          "titulo": "Sealed class / sealed interface",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "Jerarquías cerradas: when las verifica de forma exhaustiva y no requiere else."
+            },
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "sealed interface ResultadoLogin {\n    data class Exito(val usuario: String) : ResultadoLogin\n    data class Error(val mensaje: String) : ResultadoLogin\n    data object Cargando : ResultadoLogin\n}\n\nfun mostrar(r: ResultadoLogin) = when (r) {\n    is ResultadoLogin.Exito -> \"Bienvenido, ${r.usuario}\"\n    is ResultadoLogin.Error -> \"Error: ${r.mensaje}\"\n    ResultadoLogin.Cargando -> \"Cargando...\"\n}"
+            },
+            {
+              "tipo": "nota",
+              "texto": "Este patrón es muy usado en Android para representar estados de pantalla."
+            }
+          ],
+          "conceptoIds": [
+            "g-sealed"
+          ]
+        },
+        {
+          "id": "m09-s4",
+          "titulo": "Object y companion object",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "object Configuracion {\n    const val VERSION = \"1.0\"\n    var modoOscuro = false\n}\n\nclass Usuario private constructor(val nombre: String) {\n    companion object {\n        fun crear(nombre: String): Usuario? =\n            if (nombre.isNotBlank()) Usuario(nombre) else null\n    }\n}\n\nval u = Usuario.crear(\"Ana\")"
+            }
+          ],
+          "conceptoIds": [
+            "g-object",
+            "g-companion"
+          ]
+        }
+      ],
+      "erroresComunes": [
+        "Usar var en data classes (mejor inmutables y usar copy).",
+        "Poner else en un when sobre una sealed class: se pierde la verificación exhaustiva."
+      ],
+      "conceptos": [
+        "g-data-class",
+        "g-enum",
+        "g-sealed",
+        "g-object",
+        "g-companion"
+      ],
+      "ejercicios": [
+        "e9_1",
+        "e9_2",
+        "e9_3",
+        "e9_4"
+      ],
+      "recursos": [],
+      "nombreCorto": "Clases especiales",
+      "atajos": [
+        "data",
+        "when",
+        "->",
+        "is"
+      ],
+      "pruebaRapida": null
+    },
+    {
+      "id": "m10",
+      "numero": 10,
+      "nombre": "Manejo de errores",
+      "nivel": "esencial",
+      "duracionHoras": 2,
+      "objetivo": "Manejar excepciones de forma idiomática.",
+      "secciones": [
+        {
+          "id": "m10-s1",
+          "titulo": "Puntos clave",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "Kotlin no tiene excepciones verificadas (checked): el compilador no obliga a capturarlas. Además, try es una expresión."
+            },
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val numero = try {\n    \"123a\".toInt()\n} catch (e: NumberFormatException) {\n    0\n} finally {\n    println(\"Conversión intentada\")\n}"
+            }
+          ],
+          "conceptoIds": [
+            "g-try"
+          ]
+        },
+        {
+          "id": "m10-s2",
+          "titulo": "Lanzar excepciones y validaciones",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "fun dividir(a: Int, b: Int): Int {\n    if (b == 0) throw ArithmeticException(\"División entre cero\")\n    return a / b\n}\n\nfun registrar(edad: Int) {\n    require(edad >= 0) { \"Edad inválida\" }        // IllegalArgumentException\n    check(edad < 150) { \"Estado inconsistente\" }  // IllegalStateException\n}"
+            }
+          ],
+          "conceptoIds": [
+            "g-require"
+          ]
+        },
+        {
+          "id": "m10-s3",
+          "titulo": "Excepciones personalizadas",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "class SaldoInsuficienteException(mensaje: String) : Exception(mensaje)"
+            }
+          ],
+          "conceptoIds": []
+        },
+        {
+          "id": "m10-s4",
+          "titulo": "runCatching y Result",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "val resultado = runCatching { \"42\".toInt() }\nresultado\n    .onSuccess { println(\"Número: $it\") }\n    .onFailure { println(\"Error: ${it.message}\") }\n\nval valor = runCatching { \"x\".toInt() }.getOrDefault(0)"
+            }
+          ],
+          "conceptoIds": [
+            "g-runcatching"
+          ]
+        }
+      ],
+      "erroresComunes": [
+        "Capturar Exception genérica para todo.",
+        "Usar excepciones para control de flujo normal cuando toIntOrNull o nulables son más claros."
+      ],
+      "conceptos": [
+        "g-try",
+        "g-require",
+        "g-runcatching"
+      ],
+      "ejercicios": [
+        "e10_1",
+        "e10_2"
+      ],
+      "recursos": [],
+      "nombreCorto": "Manejo de errores",
+      "atajos": [
+        "try { }",
+        "catch",
+        "require( )"
+      ],
+      "pruebaRapida": null
+    },
+    {
+      "id": "m11",
+      "numero": 11,
+      "nombre": "Genéricos (lo básico)",
+      "nivel": "intermedio",
+      "duracionHoras": 2,
+      "objetivo": "Entender y escribir clases y funciones genéricas sencillas.",
+      "secciones": [
+        {
+          "id": "m11-s1",
+          "titulo": "Clases y funciones genéricas",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "class Caja<T>(val contenido: T) {\n    fun obtener(): T = contenido\n}\n\nval cajaTexto = Caja(\"Hola\")\nval cajaNumero = Caja(42)\n\nfun <T> primeroOUltimo(lista: List<T>, primero: Boolean): T? =\n    if (primero) lista.firstOrNull() else lista.lastOrNull()"
+            }
+          ],
+          "conceptoIds": [
+            "g-genericos"
+          ]
+        },
+        {
+          "id": "m11-s2",
+          "titulo": "Restricciones",
+          "contenido": [
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "fun <T : Comparable<T>> mayor(a: T, b: T): T = if (a > b) a else b\nmayor(3, 7)          // 7\nmayor(\"pera\", \"uva\") // uva"
+            }
+          ],
+          "conceptoIds": [
+            "g-genericos"
+          ]
+        },
+        {
+          "id": "m11-s3",
+          "titulo": "Varianza (solo conceptual)",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "List<out T> significa que la lista solo produce valores de tipo T; por eso una List<String> puede usarse donde se espera una List<Any>. in es lo contrario: solo consume valores. No es necesario profundizar en este curso."
+            }
+          ],
+          "conceptoIds": [
+            "g-genericos"
+          ]
+        }
+      ],
+      "erroresComunes": [],
+      "conceptos": [
+        "g-genericos"
+      ],
+      "ejercicios": [
+        "e11_1",
+        "e11_2",
+        "e11_3"
+      ],
+      "recursos": [],
+      "nombreCorto": "Genéricos",
+      "atajos": [
+        "<T>",
+        "out",
+        "in"
+      ],
+      "pruebaRapida": null
+    },
+    {
+      "id": "m12",
+      "numero": 12,
+      "nombre": "Introducción a corrutinas + proyecto final",
+      "nivel": "intermedio",
+      "duracionHoras": 2.5,
+      "objetivo": "Entender la programación asíncrona en Kotlin a nivel práctico y presentar el proyecto final.",
+      "secciones": [
+        {
+          "id": "m12-s1",
+          "titulo": "Configuración",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "Agregar la dependencia org.jetbrains.kotlinx:kotlinx-coroutines-core en Gradle (el Playground ya la incluye)."
+            }
+          ],
+          "conceptoIds": []
+        },
+        {
+          "id": "m12-s2",
+          "titulo": "Conceptos clave",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "Una corrutina es una tarea ligera que puede suspenderse sin bloquear el hilo. Las funciones suspend solo pueden llamarse desde otra corrutina o desde otra función suspend."
+            },
+            {
+              "tipo": "codigo",
+              "lenguaje": "kotlin",
+              "codigo": "import kotlinx.coroutines.*\n\nsuspend fun descargarDatos(id: Int): String {\n    delay(1000)   // simula una operación lenta sin bloquear el hilo\n    return \"Datos $id\"\n}\n\nfun main() = runBlocking {\n    // launch: lanzar y olvidar\n    launch {\n        println(\"Tarea en segundo plano\")\n    }\n\n    // async/await: tareas en paralelo que devuelven valor\n    val inicio = System.currentTimeMillis()\n    val a = async { descargarDatos(1) }\n    val b = async { descargarDatos(2) }\n    println(\"${a.await()} y ${b.await()}\")\n    println(\"Tiempo: ${System.currentTimeMillis() - inicio} ms\")  // ~1000, no 2000\n}"
+            },
+            {
+              "tipo": "nota",
+              "texto": "runBlocking se usa solo en main o en pruebas. En aplicaciones reales se usan scopes como viewModelScope (Android). Flow queda como tema para seguir aprendiendo."
+            }
+          ],
+          "conceptoIds": [
+            "g-corrutina",
+            "g-suspend",
+            "g-launch-async"
+          ]
+        },
+        {
+          "id": "m12-s3",
+          "titulo": "Proyecto final",
+          "contenido": [
+            {
+              "tipo": "texto",
+              "texto": "Sistema de gestión de biblioteca. Ver el ejercicio pf del tipo proyecto."
+            },
+            {
+              "tipo": "tabla",
+              "columnas": [
+                "Criterio",
+                "Peso"
+              ],
+              "filas": [
+                [
+                  "Funcionamiento correcto",
+                  "40%"
+                ],
+                [
+                  "Uso idiomático de Kotlin (val, null safety, colecciones funcionales, data classes)",
+                  "30%"
+                ],
+                [
+                  "Organización del código",
+                  "20%"
+                ],
+                [
+                  "Manejo de errores",
+                  "10%"
+                ]
+              ]
+            }
+          ],
+          "conceptoIds": []
+        }
+      ],
+      "erroresComunes": [],
+      "conceptos": [
+        "g-corrutina",
+        "g-suspend",
+        "g-launch-async"
+      ],
+      "ejercicios": [
+        "e12_1",
+        "pf"
+      ],
+      "recursos": [
+        "r-coroutines"
+      ],
+      "nombreCorto": "Corrutinas",
+      "atajos": [
+        "suspend",
+        "launch { }",
+        "delay( )"
+      ],
+      "pruebaRapida": null
+    }
+  ],
+  "ejercicios": [
+    {
+      "id": "e1_1",
+      "codigo": "1.1",
+      "titulo": "Primer programa",
+      "moduloId": "m01",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Crea un proyecto en IntelliJ y ejecuta un programa que imprima tu nombre y tu lenguaje favorito.",
+      "codigoInicial": "fun main() {\n    println(\"Me llamo ___\")\n    println(\"Mi lenguaje favorito es ___\")\n}",
+      "solucion": "fun main() {\n    println(\"Me llamo Ana\")\n    println(\"Mi lenguaje favorito es Kotlin\")\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "println imprime y agrega un salto de línea al final."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "esperado": "Kotlin",
+          "descripcion": "La salida incluye «Kotlin»",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e1_2",
+      "codigo": "1.2",
+      "titulo": "Recibo con print y println",
+      "moduloId": "m01",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Imprime un pequeño recibo de tres líneas combinando print y println.",
+      "codigoInicial": "fun main() {\n    print(\"Producto: \")\n    // imprime el nombre del producto con println\n    // repite para el precio y un mensaje final\n}",
+      "solucion": "fun main() {\n    print(\"Producto: \")\n    println(\"Café\")\n    print(\"Precio: \")\n    println(\"$45.50\")\n    println(\"Gracias por su compra\")\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "print no agrega salto de línea; println sí."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "print(",
+          "descripcion": "Usa print(",
+          "esperado": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "println(",
+          "descripcion": "Usa println(",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e2_1",
+      "codigo": "2.1",
+      "titulo": "Ficha personal",
+      "moduloId": "m02",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Declara las variables de una persona (nombre, edad, estatura, si es estudiante) e imprime una ficha usando plantillas de texto.",
+      "codigoInicial": "fun main() {\n    val nombre = \"Ana\"\n    val edad = 22\n    val estatura = 1.65\n    val esEstudiante = true\n    // Imprime la ficha usando $variable y ${expresión}\n}",
+      "solucion": "fun main() {\n    val nombre = \"Ana\"\n    val edad = 22\n    val estatura = 1.65\n    val esEstudiante = true\n    println(\"\"\"\n        Nombre: $nombre\n        Edad: $edad años\n        Estatura: $estatura m\n        Estudiante: ${if (esEstudiante) \"Sí\" else \"No\"}\n    \"\"\".trimIndent())\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "Dentro de un String usa $nombre para variables.",
+        "Para expresiones como un if, usa ${ ... }."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "esperado": "Nombre:",
+          "descripcion": "La salida incluye «Nombre:»",
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "$",
+          "descripcion": "Usa $",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-val",
+        "g-var",
+        "g-inferencia",
+        "g-string-template",
+        "g-raw-string"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e2_2",
+      "codigo": "2.2",
+      "titulo": "Calculadora básica con readln",
+      "moduloId": "m02",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Pide al usuario dos números con readln(), conviértelos y muestra suma, resta, multiplicación y división.",
+      "codigoInicial": "fun main() {\n    print(\"Primer número: \")\n    val a = readln().toDouble()\n    print(\"Segundo número: \")\n    val b = readln().toDouble()\n    // Imprime suma, resta, multiplicación y división\n}",
+      "solucion": "fun main() {\n    print(\"Primer número: \")\n    val a = readln().toDouble()\n    print(\"Segundo número: \")\n    val b = readln().toDouble()\n    println(\"Suma: ${a + b}\")\n    println(\"Resta: ${a - b}\")\n    println(\"Multiplicación: ${a * b}\")\n    println(\"División: ${if (b != 0.0) a / b else \"No se puede dividir entre cero\"}\")\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "readln() devuelve un String; conviértelo con toDouble().",
+        "Revisa qué pasa si el segundo número es 0."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "entrada": "10\n4",
+          "esperado": "Suma: 14.0",
+          "descripcion": "La salida incluye «Suma: 14.0»",
+          "valor": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "entrada": "10\n4",
+          "esperado": "División: 2.5",
+          "descripcion": "La salida incluye «División: 2.5»",
+          "valor": null
+        }
+      ],
+      "conceptoIds": [
+        "g-val",
+        "g-var",
+        "g-inferencia",
+        "g-string-template",
+        "g-conversion"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e2_3",
+      "codigo": "2.3",
+      "titulo": "Analizar una frase",
+      "moduloId": "m02",
+      "dificultad": "basico",
+      "tipo": "tarea",
+      "enunciado": "Dada una frase, imprime cuántos caracteres tiene, la frase en mayúsculas y cuántas palabras contiene.",
+      "codigoInicial": "fun main() {\n    val frase = \"Kotlin es un lenguaje moderno\"\n    // 1. longitud  2. mayúsculas  3. número de palabras\n}",
+      "solucion": "fun main() {\n    val frase = \"Kotlin es un lenguaje moderno\"\n    println(frase.length)\n    println(frase.uppercase())\n    println(frase.split(\" \").size)\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "length da el número de caracteres.",
+        "split(\" \") separa en palabras."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "29\nKOTLIN ES UN LENGUAJE MODERNO\n5",
+          "descripcion": "Imprime la salida esperada",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-val",
+        "g-var",
+        "g-inferencia"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e3_1",
+      "codigo": "3.1",
+      "titulo": "FizzBuzz con when",
+      "moduloId": "m03",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Imprime los números del 1 al 100. Para múltiplos de 3 imprime \"Fizz\", de 5 \"Buzz\" y de ambos \"FizzBuzz\". Usa when sin argumento.",
+      "codigoInicial": "fun main() {\n    for (i in 1..100) {\n        val salida = when {\n            // completa las condiciones\n            else -> i.toString()\n        }\n        println(salida)\n    }\n}",
+      "solucion": "fun main() {\n    for (i in 1..100) {\n        val salida = when {\n            i % 15 == 0 -> \"FizzBuzz\"\n            i % 3 == 0 -> \"Fizz\"\n            i % 5 == 0 -> \"Buzz\"\n            else -> i.toString()\n        }\n        println(salida)\n    }\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "El orden importa: revisa primero los múltiplos de 15."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "esperado": "FizzBuzz",
+          "descripcion": "La salida incluye «FizzBuzz»",
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "when",
+          "descripcion": "Usa when",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-when",
+        "g-rangos"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e3_2",
+      "codigo": "3.2",
+      "titulo": "Clasificador de IMC",
+      "moduloId": "m03",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Calcula el IMC (peso / estatura²) y clasifícalo en \"bajo peso\" (< 18.5), \"normal\" (< 25), \"sobrepeso\" (< 30) u \"obesidad\" usando when.",
+      "codigoInicial": "fun main() {\n    val peso = 70.0\n    val estatura = 1.75\n    val imc = peso / (estatura * estatura)\n    val categoria = when {\n        // completa\n        else -> \"Obesidad\"\n    }\n    println(\"IMC: ${\"%.1f\".format(imc)} - $categoria\")\n}",
+      "solucion": "fun main() {\n    val peso = 70.0\n    val estatura = 1.75\n    val imc = peso / (estatura * estatura)\n    val categoria = when {\n        imc < 18.5 -> \"Bajo peso\"\n        imc < 25 -> \"Normal\"\n        imc < 30 -> \"Sobrepeso\"\n        else -> \"Obesidad\"\n    }\n    println(\"IMC: ${\"%.1f\".format(imc)} - $categoria\")\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "Ordena las condiciones de menor a mayor."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "esperado": "Normal",
+          "descripcion": "La salida incluye «Normal»",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-string-template",
+        "g-when"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e3_3",
+      "codigo": "3.3",
+      "titulo": "Tabla de multiplicar descendente",
+      "moduloId": "m03",
+      "dificultad": "basico",
+      "tipo": "tarea",
+      "enunciado": "Imprime la tabla de multiplicar de un número, del 10 al 1.",
+      "codigoInicial": "fun main() {\n    val n = 7\n    // usa un rango con downTo\n}",
+      "solucion": "fun main() {\n    val n = 7\n    for (i in 10 downTo 1) println(\"$n x $i = ${n * i}\")\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "10 downTo 1 recorre de 10 a 1."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "esperado": "7 x 10 = 70",
+          "descripcion": "La salida incluye «7 x 10 = 70»",
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "downTo",
+          "descripcion": "Usa downTo",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-string-template",
+        "g-rangos"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e3_4",
+      "codigo": "3.4",
+      "titulo": "Menú en consola",
+      "moduloId": "m03",
+      "dificultad": "intermedio",
+      "tipo": "tarea",
+      "enunciado": "Crea un menú que se repita con while hasta que el usuario elija \"salir\".",
+      "codigoInicial": "fun main() {\n    var opcion = \"\"\n    while (/* condición */) {\n        // muestra opciones, lee con readln() y usa when\n    }\n}",
+      "solucion": "fun main() {\n    var opcion = \"\"\n    while (opcion != \"3\") {\n        println(\"1. Saludar  2. Hora  3. Salir\")\n        opcion = readln()\n        when (opcion) {\n            \"1\" -> println(\"¡Hola!\")\n            \"2\" -> println(java.time.LocalTime.now())\n            \"3\" -> println(\"Adiós\")\n            else -> println(\"Opción inválida\")\n        }\n    }\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "La condición del while debe comparar con la opción de salir.",
+        "Usa when para cada opción e incluye else."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "entrada": "1\n3",
+          "esperado": "Adiós",
+          "descripcion": "La salida incluye «Adiós»",
+          "valor": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "while",
+          "descripcion": "Usa while",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-when"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e4_1",
+      "codigo": "4.1",
+      "titulo": "Calcular descuento",
+      "moduloId": "m04",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Crea calcularDescuento(precio, porcentaje = 10.0) que devuelva el precio final. Llámala con y sin porcentaje, y usando parámetros nombrados.",
+      "codigoInicial": "fun calcularDescuento(precio: Double, porcentaje: Double = 10.0) =\n    // completa la fórmula\n\nfun main() {\n    println(calcularDescuento(200.0))\n    println(calcularDescuento(200.0, 25.0))\n    println(calcularDescuento(porcentaje = 50.0, precio = 80.0))\n}",
+      "solucion": "fun calcularDescuento(precio: Double, porcentaje: Double = 10.0) =\n    precio * (1 - porcentaje / 100)\n\nfun main() {\n    println(calcularDescuento(200.0))\n    println(calcularDescuento(200.0, 25.0))\n    println(calcularDescuento(porcentaje = 50.0, precio = 80.0))\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "El precio final es precio * (1 - porcentaje / 100)."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "180.0\n150.0\n40.0",
+          "descripcion": "Imprime la salida esperada",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-unit",
+        "g-parametros"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e4_2",
+      "codigo": "4.2",
+      "titulo": "Máximo con vararg",
+      "moduloId": "m04",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Crea maximo(vararg numeros: Int) que devuelva el mayor sin usar max().",
+      "codigoInicial": "fun maximo(vararg numeros: Int): Int {\n    var mayor = numeros[0]\n    // recorre numeros y actualiza mayor\n    return mayor\n}\n\nfun main() = println(maximo(4, 19, 7))",
+      "solucion": "fun maximo(vararg numeros: Int): Int {\n    require(numeros.isNotEmpty())\n    var mayor = numeros[0]\n    for (n in numeros) if (n > mayor) mayor = n\n    return mayor\n}\n\nfun main() = println(maximo(4, 19, 7))",
+      "solucionPublicada": true,
+      "pistas": [
+        "Un vararg se recorre como un arreglo con for."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "19",
+          "descripcion": "Imprime exactamente 19",
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_no_contiene",
+          "valor": ".max(",
+          "descripcion": "No usa .max(",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-unit",
+        "g-parametros",
+        "g-vararg",
+        "g-require"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e4_3",
+      "codigo": "4.3",
+      "titulo": "Extensión contarVocales",
+      "moduloId": "m04",
+      "dificultad": "basico",
+      "tipo": "tarea",
+      "enunciado": "Crea la función de extensión String.contarVocales().",
+      "codigoInicial": "fun String.contarVocales(): Int {\n    // usa this y count { }\n}\n\nfun main() = println(\"Programación\".contarVocales())",
+      "solucion": "fun String.contarVocales() = this.lowercase().count { it in \"aeiouáéíóú\" }\n\nfun main() = println(\"Programación\".contarVocales())  // 5",
+      "solucionPublicada": true,
+      "pistas": [
+        "Dentro de la extensión, this es el String.",
+        "count { } cuenta los caracteres que cumplen la condición."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "5",
+          "descripcion": "Imprime exactamente 5",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-unit",
+        "g-parametros",
+        "g-extension",
+        "g-lambda"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e4_4",
+      "codigo": "4.4",
+      "titulo": "Extensión aPesos",
+      "moduloId": "m04",
+      "dificultad": "intermedio",
+      "tipo": "tarea",
+      "enunciado": "Crea Double.aPesos() que devuelva el número formateado como \"$1,234.50\".",
+      "codigoInicial": "fun Double.aPesos(): String {\n    // usa String.format\n}\n\nfun main() = println(1234.5.aPesos())",
+      "solucion": "fun Double.aPesos() = \"$\" + String.format(\"%,.2f\", this)\n\nfun main() = println(1234.5.aPesos())  // $1,234.50",
+      "solucionPublicada": true,
+      "pistas": [
+        "El formato %,.2f agrega separador de miles y dos decimales."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "$1,234.50",
+          "descripcion": "Imprime exactamente $1,234.50",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-unit",
+        "g-parametros",
+        "g-extension"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e5_1",
+      "codigo": "5.1",
+      "titulo": "Lectura segura de edad",
+      "moduloId": "m05",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Lee una edad con readln().toIntOrNull(). Si no es válida, muestra un mensaje usando Elvis; si es válida, di si es mayor de edad.",
+      "codigoInicial": "fun main() {\n    print(\"Edad: \")\n    val edad = readln().toIntOrNull() ?: run {\n        // mensaje de error y return\n    }\n    // imprime si es mayor o menor de edad\n}",
+      "solucion": "fun main() {\n    print(\"Edad: \")\n    val edad = readln().toIntOrNull() ?: run {\n        println(\"Edad inválida\")\n        return\n    }\n    println(if (edad >= 18) \"Mayor de edad\" else \"Menor de edad\")\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "toIntOrNull() devuelve null si el texto no es número.",
+        "Con ?: puedes ejecutar un bloque y salir con return."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "entrada": "20",
+          "esperado": "Mayor de edad",
+          "descripcion": "La salida incluye «Mayor de edad»",
+          "valor": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "entrada": "abc",
+          "esperado": "Edad inválida",
+          "descripcion": "La salida incluye «Edad inválida»",
+          "valor": null
+        }
+      ],
+      "conceptoIds": [
+        "g-conversion",
+        "g-if-expresion",
+        "g-elvis"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [
+        {
+          "fragmento": "toIntOrNull()",
+          "texto": "Convierte el texto a número o devuelve null si no se puede."
+        },
+        {
+          "fragmento": "?: run { … return }",
+          "texto": "Si la edad es null, muestra el error y termina main."
+        }
+      ],
+      "desbloqueo": null
+    },
+    {
+      "id": "e5_2",
+      "codigo": "5.2",
+      "titulo": "Sumar valores convertibles",
+      "moduloId": "m05",
+      "dificultad": "intermedio",
+      "tipo": "en_clase",
+      "enunciado": "Dada listOf(\"12\", \"abc\", null, \"7\") de tipo List<String?>, suma solo los valores convertibles a número.",
+      "codigoInicial": "fun main() {\n    val datos = listOf(\"12\", \"abc\", null, \"7\")\n    val suma = datos.sumOf {\n        // convierte cada elemento de forma segura\n    }\n    println(suma)\n}",
+      "solucion": "fun main() {\n    val datos = listOf(\"12\", \"abc\", null, \"7\")\n    val suma = datos.sumOf { it?.toIntOrNull() ?: 0 }   // 19\n    println(suma)\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "Cada elemento es String?, así que it puede ser null. ¿Qué operador llama a un método solo si no es null?",
+        "toIntOrNull() devuelve null si no es número.",
+        "Usa ?: 0 para reemplazar los null por 0."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "19",
+          "descripcion": "Imprime exactamente 19",
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_no_contiene",
+          "valor": "!!",
+          "descripcion": "No usa !!",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-conversion",
+        "g-nulable",
+        "g-llamada-segura",
+        "g-elvis",
+        "g-asercion",
+        "g-list",
+        "g-lambda"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [
+        {
+          "fragmento": "it?.",
+          "texto": "Solo llama a toIntOrNull() si el elemento no es null."
+        },
+        {
+          "fragmento": "toIntOrNull()",
+          "texto": "Devuelve null cuando el texto no es un número, como \"abc\"."
+        },
+        {
+          "fragmento": "?: 0",
+          "texto": "Cambia cada null por 0, así sumOf suma 12 + 0 + 0 + 7 = 19."
+        }
+      ],
+      "desbloqueo": null
+    },
+    {
+      "id": "e5_3",
+      "codigo": "5.3",
+      "titulo": "Eliminar el !!",
+      "moduloId": "m05",
+      "dificultad": "basico",
+      "tipo": "tarea",
+      "enunciado": "Refactoriza fun saludo(nombre: String?) = \"Hola, \" + nombre!!.uppercase() para eliminar el !!.",
+      "codigoInicial": "fun saludo(nombre: String?) = \"Hola, \" + nombre!!.uppercase()\n\nfun main() {\n    println(saludo(\"ana\"))\n    println(saludo(null))\n}",
+      "solucion": "fun saludo(nombre: String?) = \"Hola, ${nombre?.uppercase() ?: \"INVITADO\"}\"\n\nfun main() {\n    println(saludo(\"ana\"))\n    println(saludo(null))\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "Cambia !! por ?. y da un valor alternativo con ?:."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "Hola, ANA\nHola, INVITADO",
+          "descripcion": "Imprime la salida esperada",
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_no_contiene",
+          "valor": "!!",
+          "descripcion": "No usa !!",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-string-template",
+        "g-nulable",
+        "g-llamada-segura",
+        "g-elvis",
+        "g-asercion"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [
+        {
+          "fragmento": "nombre?.uppercase()",
+          "texto": "Si nombre es null, el resultado es null en vez de lanzar una excepción."
+        },
+        {
+          "fragmento": "?: \"INVITADO\"",
+          "texto": "Da un texto por defecto cuando el nombre es null."
+        }
+      ],
+      "desbloqueo": null
+    },
+    {
+      "id": "e6_1",
+      "codigo": "6.1",
+      "titulo": "Estadísticas de calificaciones",
+      "moduloId": "m06",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Dada una lista de calificaciones, obtén promedio, calificación más alta, cuántos aprobaron (≥ 70) y la lista ordenada.",
+      "codigoInicial": "fun main() {\n    val calificaciones = listOf(85, 62, 90, 71, 55, 100)\n    // average(), max(), count { }, sorted()\n}",
+      "solucion": "fun main() {\n    val calificaciones = listOf(85, 62, 90, 71, 55, 100)\n    println(calificaciones.average())\n    println(calificaciones.max())\n    println(calificaciones.count { it >= 70 })\n    println(calificaciones.sorted())\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "count { it >= 70 } cuenta los aprobados."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "77.16666666666667\n100\n4\n[55, 62, 71, 85, 90, 100]",
+          "descripcion": "Imprime la salida esperada",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-list",
+        "g-lambda"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e6_2",
+      "codigo": "6.2",
+      "titulo": "Frecuencia de palabras",
+      "moduloId": "m06",
+      "dificultad": "intermedio",
+      "tipo": "en_clase",
+      "enunciado": "Cuenta la frecuencia de cada palabra en un texto (resultado: Map<String, Int>).",
+      "codigoInicial": "fun main() {\n    val texto = \"el perro y el gato y el ratón\"\n    val frecuencias = texto.split(\" \")\n        // agrupa y cuenta\n    println(frecuencias)\n}",
+      "solucion": "fun main() {\n    val texto = \"el perro y el gato y el ratón\"\n    val frecuencias = texto.split(\" \").groupingBy { it }.eachCount()\n    println(frecuencias)  // {el=3, perro=1, y=2, gato=1, ratón=1}\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "Primero separa el texto en palabras.",
+        "groupingBy { it }.eachCount() cuenta repeticiones."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "{el=3, perro=1, y=2, gato=1, ratón=1}",
+          "descripcion": "Imprime la salida esperada",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-map",
+        "g-groupby",
+        "g-lambda"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e6_3",
+      "codigo": "6.3",
+      "titulo": "Productos caros ordenados",
+      "moduloId": "m06",
+      "dificultad": "intermedio",
+      "tipo": "tarea",
+      "enunciado": "Dado un mapa de productos y precios, obtén los productos con precio mayor a 100, ordenados por precio.",
+      "codigoInicial": "fun main() {\n    val productos = mapOf(\"Mouse\" to 250.0, \"Cable\" to 80.0, \"Teclado\" to 600.0)\n    val caros = productos\n        // filtra, convierte a lista y ordena\n    println(caros)\n}",
+      "solucion": "fun main() {\n    val productos = mapOf(\"Mouse\" to 250.0, \"Cable\" to 80.0, \"Teclado\" to 600.0)\n    val caros = productos\n        .filter { it.value > 100 }\n        .toList()\n        .sortedBy { it.second }\n    println(caros)  // [(Mouse, 250.0), (Teclado, 600.0)]\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "En un Map, it.value es el precio.",
+        "toList() convierte a pares; ordénalos con sortedBy { it.second }."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "[(Mouse, 250.0), (Teclado, 600.0)]",
+          "descripcion": "Imprime la salida esperada",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-map",
+        "g-filter-map",
+        "g-lambda"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e6_4",
+      "codigo": "6.4",
+      "titulo": "Correos únicos",
+      "moduloId": "m06",
+      "dificultad": "basico",
+      "tipo": "tarea",
+      "enunciado": "Elimina duplicados de una lista de correos y ordénalos alfabéticamente.",
+      "codigoInicial": "fun main() {\n    val correos = listOf(\"b@x.com\", \"a@x.com\", \"b@x.com\")\n    // distinct() y sorted()\n}",
+      "solucion": "fun main() {\n    val correos = listOf(\"b@x.com\", \"a@x.com\", \"b@x.com\")\n    println(correos.distinct().sorted())  // o correos.toSortedSet()\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "distinct() elimina duplicados."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "[a@x.com, b@x.com]",
+          "descripcion": "Imprime exactamente [a@x.com, b@x.com]",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-list"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e7_1",
+      "codigo": "7.1",
+      "titulo": "aplicarATodos sin map",
+      "moduloId": "m07",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Crea aplicarATodos(lista: List<Int>, f: (Int) -> Int): List<Int> sin usar map.",
+      "codigoInicial": "fun aplicarATodos(lista: List<Int>, f: (Int) -> Int): List<Int> {\n    val resultado = mutableListOf<Int>()\n    // recorre la lista y agrega f(n)\n    return resultado\n}\n\nfun main() = println(aplicarATodos(listOf(1, 2, 3)) { it * it })",
+      "solucion": "fun aplicarATodos(lista: List<Int>, f: (Int) -> Int): List<Int> {\n    val resultado = mutableListOf<Int>()\n    for (n in lista) resultado.add(f(n))\n    return resultado\n}\n\nfun main() = println(aplicarATodos(listOf(1, 2, 3)) { it * it })",
+      "solucionPublicada": true,
+      "pistas": [
+        "f es una función: llámala como f(n)."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "[1, 4, 9]",
+          "descripcion": "Imprime exactamente [1, 4, 9]",
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_no_contiene",
+          "valor": ".map",
+          "descripcion": "No usa .map",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-list",
+        "g-lambda",
+        "g-orden-superior"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e7_2",
+      "codigo": "7.2",
+      "titulo": "Calculadora con mapa de funciones",
+      "moduloId": "m07",
+      "dificultad": "intermedio",
+      "tipo": "en_clase",
+      "enunciado": "Crea una calculadora que reciba un operador en texto (\"+\", \"-\", \"*\", \"/\") y use un Map<String, (Double, Double) -> Double> para resolver la operación.",
+      "codigoInicial": "val operaciones: Map<String, (Double, Double) -> Double> = mapOf(\n    \"+\" to { a, b -> a + b }\n    // agrega las demás\n)\n\nfun calcular(a: Double, op: String, b: Double): Double? = TODO()\n\nfun main() = println(calcular(6.0, \"*\", 7.0))",
+      "solucion": "val operaciones: Map<String, (Double, Double) -> Double> = mapOf(\n    \"+\" to { a, b -> a + b },\n    \"-\" to { a, b -> a - b },\n    \"*\" to { a, b -> a * b },\n    \"/\" to { a, b -> a / b }\n)\n\nfun calcular(a: Double, op: String, b: Double): Double? = operaciones[op]?.invoke(a, b)\n\nfun main() = println(calcular(6.0, \"*\", 7.0))",
+      "solucionPublicada": true,
+      "pistas": [
+        "Las lambdas pueden ser valores de un Map.",
+        "operaciones[op] puede ser null: usa ?.invoke(a, b)."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "42.0",
+          "descripcion": "Imprime exactamente 42.0",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-nulable",
+        "g-llamada-segura",
+        "g-map",
+        "g-lambda"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e7_3",
+      "codigo": "7.3",
+      "titulo": "miFiltro como extensión",
+      "moduloId": "m07",
+      "dificultad": "intermedio",
+      "tipo": "tarea",
+      "enunciado": "Crea miFiltro como extensión de List<Int> que reciba un predicado (Int) -> Boolean.",
+      "codigoInicial": "fun List<Int>.miFiltro(predicado: (Int) -> Boolean): List<Int> {\n    // tu código\n}\n\nfun main() = println(listOf(1, 2, 3, 4).miFiltro { it > 2 })",
+      "solucion": "fun List<Int>.miFiltro(predicado: (Int) -> Boolean): List<Int> {\n    val resultado = mutableListOf<Int>()\n    for (n in this) if (predicado(n)) resultado.add(n)\n    return resultado\n}\n\nfun main() = println(listOf(1, 2, 3, 4).miFiltro { it > 2 })",
+      "solucionPublicada": true,
+      "pistas": [
+        "Dentro de la extensión, this es la lista.",
+        "Agrega a un resultado solo si predicado(n) es true."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "[3, 4]",
+          "descripcion": "Imprime exactamente [3, 4]",
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_no_contiene",
+          "valor": ".filter",
+          "descripcion": "No usa .filter",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-extension",
+        "g-list",
+        "g-lambda",
+        "g-orden-superior"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e7_4",
+      "codigo": "7.4",
+      "titulo": "Configurar objeto con apply",
+      "moduloId": "m07",
+      "dificultad": "basico",
+      "tipo": "tarea",
+      "enunciado": "Reescribe con apply: val sb = StringBuilder(); sb.append(\"Hola\"); sb.append(\", \"); sb.append(\"mundo\").",
+      "codigoInicial": "fun main() {\n    val sb = StringBuilder()\n    sb.append(\"Hola\")\n    sb.append(\", \")\n    sb.append(\"mundo\")\n    println(sb)\n}",
+      "solucion": "fun main() {\n    val sb = StringBuilder().apply {\n        append(\"Hola\")\n        append(\", \")\n        append(\"mundo\")\n    }\n    println(sb)\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "Dentro de apply, this es el objeto: puedes llamar append directamente."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "Hola, mundo",
+          "descripcion": "Imprime exactamente Hola, mundo",
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "apply",
+          "descripcion": "Usa apply",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-scope"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e8_1",
+      "codigo": "8.1",
+      "titulo": "CuentaBancaria completa",
+      "moduloId": "m08",
+      "dificultad": "intermedio",
+      "tipo": "en_clase",
+      "enunciado": "Crea la clase CuentaBancaria con depositar, retirar (que no permita saldo negativo) e historial de movimientos.",
+      "codigoInicial": "class CuentaBancaria(val titular: String) {\n    var saldo = 0.0\n        private set\n    private val historial = mutableListOf<String>()\n\n    fun depositar(monto: Double) { TODO() }\n    fun retirar(monto: Double): Boolean = TODO()\n    fun verHistorial(): List<String> = historial.toList()\n}",
+      "solucion": "class CuentaBancaria(val titular: String) {\n    var saldo = 0.0\n        private set\n    private val historial = mutableListOf<String>()\n\n    fun depositar(monto: Double) {\n        require(monto > 0) { \"Monto inválido\" }\n        saldo += monto\n        historial.add(\"Depósito: $monto\")\n    }\n\n    fun retirar(monto: Double): Boolean {\n        if (monto > saldo) return false\n        saldo -= monto\n        historial.add(\"Retiro: $monto\")\n        return true\n    }\n\n    fun verHistorial(): List<String> = historial.toList()\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "private set permite leer el saldo desde fuera pero no modificarlo.",
+        "retirar debe devolver false si no hay saldo suficiente."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "private set",
+          "descripcion": "Usa private set",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-string-template",
+        "g-list",
+        "g-constructor",
+        "g-visibilidad",
+        "g-require"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e8_2",
+      "codigo": "8.2",
+      "titulo": "Nómina de empleados",
+      "moduloId": "m08",
+      "dificultad": "intermedio",
+      "tipo": "tarea",
+      "enunciado": "Crea una clase abstracta Empleado con EmpleadoTiempoCompleto y EmpleadoPorHoras, cada uno con su forma de calcular salario. Calcula la nómina total de una lista mixta.",
+      "codigoInicial": "fun main() {\n    // Tu código aquí\n}",
+      "solucion": "abstract class Empleado(val nombre: String) {\n    abstract fun salario(): Double\n}\n\nclass EmpleadoTiempoCompleto(nombre: String, val sueldoMensual: Double) : Empleado(nombre) {\n    override fun salario() = sueldoMensual\n}\n\nclass EmpleadoPorHoras(nombre: String, val horas: Int, val tarifa: Double) : Empleado(nombre) {\n    override fun salario() = horas * tarifa\n}\n\nfun main() {\n    val empleados = listOf(\n        EmpleadoTiempoCompleto(\"Ana\", 20000.0),\n        EmpleadoPorHoras(\"Luis\", 80, 150.0)\n    )\n    println(\"Nómina: ${empleados.sumOf { it.salario() }}\")\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "Declara salario() como abstract en la clase base.",
+        "sumOf { it.salario() } suma la nómina."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "abstract",
+          "descripcion": "Usa abstract",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-string-template",
+        "g-list",
+        "g-lambda",
+        "g-constructor",
+        "g-open-override",
+        "g-interface"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e8_3",
+      "codigo": "8.3",
+      "titulo": "Interfaz Vehiculo",
+      "moduloId": "m08",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Crea la interfaz Vehiculo con acelerar() y frenar(), implementada por Auto y Bicicleta.",
+      "codigoInicial": "interface Vehiculo {\n    fun acelerar()\n    fun frenar() = println(\"Frenando...\")\n}\n\n// Crea Auto y Bicicleta\n\nfun main() = listOf(Auto(), Bicicleta()).forEach { it.acelerar(); it.frenar() }",
+      "solucion": "interface Vehiculo {\n    fun acelerar()\n    fun frenar() = println(\"Frenando...\")\n}\n\nclass Auto : Vehiculo {\n    override fun acelerar() = println(\"El auto acelera con el motor\")\n}\n\nclass Bicicleta : Vehiculo {\n    override fun acelerar() = println(\"La bici acelera pedaleando\")\n}\n\nfun main() = listOf(Auto(), Bicicleta()).forEach { it.acelerar(); it.frenar() }",
+      "solucionPublicada": true,
+      "pistas": [
+        "Implementa la interfaz con class Auto : Vehiculo y override."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "esperado": "Frenando...",
+          "descripcion": "La salida incluye «Frenando...»",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-rangos",
+        "g-list",
+        "g-lambda",
+        "g-open-override",
+        "g-interface"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e8_4",
+      "codigo": "8.4",
+      "titulo": "Temperatura con propiedad calculada",
+      "moduloId": "m08",
+      "dificultad": "basico",
+      "tipo": "tarea",
+      "enunciado": "Crea la clase Temperatura que guarde grados Celsius y tenga una propiedad calculada fahrenheit.",
+      "codigoInicial": "class Temperatura(val celsius: Double) {\n    val fahrenheit: Double\n        get() = TODO()\n}\n\nfun main() = println(Temperatura(25.0).fahrenheit)",
+      "solucion": "class Temperatura(val celsius: Double) {\n    val fahrenheit: Double\n        get() = celsius * 9 / 5 + 32\n}\n\nfun main() = println(Temperatura(25.0).fahrenheit)  // 77.0",
+      "solucionPublicada": true,
+      "pistas": [
+        "F = C × 9 / 5 + 32."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "77.0",
+          "descripcion": "Imprime exactamente 77.0",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-constructor",
+        "g-propiedades"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e9_1",
+      "codigo": "9.1",
+      "titulo": "Carrito de compras con data class",
+      "moduloId": "m09",
+      "dificultad": "intermedio",
+      "tipo": "en_clase",
+      "enunciado": "Modela un carrito con data class Producto y data class ItemCarrito, calcula el total y aplica un descuento usando copy.",
+      "codigoInicial": "data class Producto(val nombre: String, val precio: Double)\ndata class ItemCarrito(val producto: Producto, val cantidad: Int)\n\nfun main() {\n    val carrito = listOf(\n        ItemCarrito(Producto(\"Libro\", 300.0), 2),\n        ItemCarrito(Producto(\"Pluma\", 20.0), 5)\n    )\n    // total y total con 10% de descuento usando copy\n}",
+      "solucion": "data class Producto(val nombre: String, val precio: Double)\ndata class ItemCarrito(val producto: Producto, val cantidad: Int) {\n    val subtotal get() = producto.precio * cantidad\n}\n\nfun main() {\n    val carrito = listOf(\n        ItemCarrito(Producto(\"Libro\", 300.0), 2),\n        ItemCarrito(Producto(\"Pluma\", 20.0), 5)\n    )\n    println(\"Total: ${carrito.sumOf { it.subtotal }}\")\n\n    val conDescuento = carrito.map {\n        it.copy(producto = it.producto.copy(precio = it.producto.precio * 0.9))\n    }\n    println(\"Con 10% de descuento: ${conDescuento.sumOf { it.subtotal }}\")\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "Agrega una propiedad subtotal a ItemCarrito.",
+        "copy crea una nueva instancia cambiando solo lo que indiques."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "esperado": "Total: 700.0",
+          "descripcion": "La salida incluye «Total: 700.0»",
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "copy(",
+          "descripcion": "Usa copy(",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-string-template",
+        "g-list",
+        "g-filter-map",
+        "g-lambda",
+        "g-constructor",
+        "g-propiedades",
+        "g-data-class"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e9_2",
+      "codigo": "9.2",
+      "titulo": "Semáforo con enum",
+      "moduloId": "m09",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Crea enum class Semaforo con propiedad de duración en segundos y una función siguiente().",
+      "codigoInicial": "enum class Semaforo(val segundos: Int) {\n    VERDE(30), AMARILLO(5), ROJO(25);\n\n    fun siguiente(): Semaforo = TODO()\n}\n\nfun main() = println(Semaforo.ROJO.siguiente())",
+      "solucion": "enum class Semaforo(val segundos: Int) {\n    VERDE(30), AMARILLO(5), ROJO(25);\n\n    fun siguiente() = when (this) {\n        VERDE -> AMARILLO\n        AMARILLO -> ROJO\n        ROJO -> VERDE\n    }\n}\n\nfun main() = println(Semaforo.ROJO.siguiente())",
+      "solucionPublicada": true,
+      "pistas": [
+        "Usa when (this) dentro del enum."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "VERDE",
+          "descripcion": "Imprime exactamente VERDE",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-when",
+        "g-lambda",
+        "g-constructor",
+        "g-enum"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e9_3",
+      "codigo": "9.3",
+      "titulo": "Cajero con sealed class",
+      "moduloId": "m09",
+      "dificultad": "intermedio",
+      "tipo": "tarea",
+      "enunciado": "Crea una sealed class para operaciones de un cajero (Deposito, Retiro, Consulta) y una función que procese cada una con when.",
+      "codigoInicial": "fun main() {\n    // Tu código aquí\n}",
+      "solucion": "sealed class Operacion {\n    data class Deposito(val monto: Double) : Operacion()\n    data class Retiro(val monto: Double) : Operacion()\n    data object Consulta : Operacion()\n}\n\nvar saldo = 1000.0\n\nfun procesar(op: Operacion): String = when (op) {\n    is Operacion.Deposito -> { saldo += op.monto; \"Depositado ${op.monto}\" }\n    is Operacion.Retiro ->\n        if (op.monto <= saldo) { saldo -= op.monto; \"Retirado ${op.monto}\" }\n        else \"Saldo insuficiente\"\n    Operacion.Consulta -> \"Saldo: $saldo\"\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "Usa data class para operaciones con datos y data object para Consulta.",
+        "El when sobre una sealed class no necesita else."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "sealed",
+          "descripcion": "Usa sealed",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-string-template",
+        "g-when",
+        "g-smart-cast",
+        "g-constructor",
+        "g-data-class",
+        "g-sealed",
+        "g-object"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e9_4",
+      "codigo": "9.4",
+      "titulo": "Contador de visitas con object",
+      "moduloId": "m09",
+      "dificultad": "basico",
+      "tipo": "tarea",
+      "enunciado": "Crea un object contador de visitas con funciones registrar() y total().",
+      "codigoInicial": "object ContadorVisitas {\n    private var visitas = 0\n    // registrar() y total()\n}",
+      "solucion": "object ContadorVisitas {\n    private var visitas = 0\n    fun registrar() { visitas++ }\n    fun total() = visitas\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "Un object es una instancia única: se usa como ContadorVisitas.registrar()."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "object",
+          "descripcion": "Usa object",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-visibilidad",
+        "g-object"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e10_1",
+      "codigo": "10.1",
+      "titulo": "SaldoInsuficienteException",
+      "moduloId": "m10",
+      "dificultad": "intermedio",
+      "tipo": "en_clase",
+      "enunciado": "Modifica la CuentaBancaria del ejercicio 8.1 para lanzar SaldoInsuficienteException y captúrala en main.",
+      "codigoInicial": "class SaldoInsuficienteException(mensaje: String) : Exception(mensaje)\n\nclass Cuenta(var saldo: Double) {\n    fun retirar(monto: Double) {\n        // lanza la excepción si no alcanza\n        saldo -= monto\n    }\n}\n\nfun main() {\n    val cuenta = Cuenta(100.0)\n    cuenta.retirar(250.0)\n}",
+      "solucion": "class SaldoInsuficienteException(mensaje: String) : Exception(mensaje)\n\nclass Cuenta(var saldo: Double) {\n    fun retirar(monto: Double) {\n        if (monto > saldo) throw SaldoInsuficienteException(\"Faltan ${monto - saldo}\")\n        saldo -= monto\n    }\n}\n\nfun main() {\n    val cuenta = Cuenta(100.0)\n    try {\n        cuenta.retirar(250.0)\n    } catch (e: SaldoInsuficienteException) {\n        println(\"Error: ${e.message}\")\n    }\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "Usa throw dentro de retirar.",
+        "En main, envuelve la llamada en try/catch."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "Error: Faltan 150.0",
+          "descripcion": "Imprime exactamente Error: Faltan 150.0",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-string-template",
+        "g-constructor",
+        "g-try"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e10_2",
+      "codigo": "10.2",
+      "titulo": "Pedir número hasta que sea válido",
+      "moduloId": "m10",
+      "dificultad": "basico",
+      "tipo": "en_clase",
+      "enunciado": "Crea una función que lea un número desde consola y lo vuelva a pedir hasta que sea válido. Luego reescríbela con runCatching o toIntOrNull y discute cuál es más limpia.",
+      "codigoInicial": "fun leerNumero(): Int {\n    while (true) {\n        // intenta convertir readln() y devuelve si es válido\n    }\n}\n\nfun main() = println(leerNumero() * 2)",
+      "solucion": "// Con try/catch\nfun leerNumero(): Int {\n    while (true) {\n        try {\n            return readln().toInt()\n        } catch (e: NumberFormatException) {\n            println(\"No es un número, intenta de nuevo\")\n        }\n    }\n}\n\n// Con toIntOrNull (más idiomática)\nfun leerNumero2(): Int {\n    while (true) {\n        readln().toIntOrNull()?.let { return it }\n        println(\"No es un número, intenta de nuevo\")\n    }\n}\n\nfun main() = println(leerNumero2() * 2)",
+      "solucionPublicada": true,
+      "pistas": [
+        "toIntOrNull()?.let { return it } devuelve solo si es número."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "entrada": "abc\n21",
+          "esperado": "42",
+          "descripcion": "La salida incluye «42»",
+          "valor": null
+        }
+      ],
+      "conceptoIds": [
+        "g-conversion",
+        "g-llamada-segura",
+        "g-lambda",
+        "g-scope",
+        "g-try",
+        "g-runcatching"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e11_1",
+      "codigo": "11.1",
+      "titulo": "Pila genérica",
+      "moduloId": "m11",
+      "dificultad": "intermedio",
+      "tipo": "en_clase",
+      "enunciado": "Crea la clase genérica Pila<T> con push, pop, peek e isEmpty.",
+      "codigoInicial": "class Pila<T> {\n    private val elementos = mutableListOf<T>()\n    // push, pop, peek, isEmpty\n}",
+      "solucion": "class Pila<T> {\n    private val elementos = mutableListOf<T>()\n    fun push(e: T) = elementos.add(e)\n    fun pop(): T? = elementos.removeLastOrNull()\n    fun peek(): T? = elementos.lastOrNull()\n    fun isEmpty() = elementos.isEmpty()\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "pop y peek deben devolver T? porque la pila puede estar vacía.",
+        "removeLastOrNull() y lastOrNull() ya manejan la lista vacía."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "<T>",
+          "descripcion": "Usa <T>",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-nulable",
+        "g-list",
+        "g-visibilidad",
+        "g-genericos"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e11_2",
+      "codigo": "11.2",
+      "titulo": "Intercambiar un Pair",
+      "moduloId": "m11",
+      "dificultad": "basico",
+      "tipo": "tarea",
+      "enunciado": "Crea la función genérica intercambiar(par: Pair<A, B>): Pair<B, A>.",
+      "codigoInicial": "fun <A, B> intercambiar(par: Pair<A, B>): Pair<B, A> = TODO()\n\nfun main() = println(intercambiar(1 to \"uno\"))",
+      "solucion": "fun <A, B> intercambiar(par: Pair<A, B>): Pair<B, A> = Pair(par.second, par.first)\n\nfun main() = println(intercambiar(1 to \"uno\"))  // (uno, 1)",
+      "solucionPublicada": true,
+      "pistas": [
+        "par.first y par.second dan cada elemento."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_exacta",
+          "esperado": "(uno, 1)",
+          "descripcion": "Imprime exactamente (uno, 1)",
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e11_3",
+      "codigo": "11.3",
+      "titulo": "Respuesta<T> sellada",
+      "moduloId": "m11",
+      "dificultad": "reto",
+      "tipo": "tarea",
+      "enunciado": "Crea una clase sellada genérica Respuesta<T> con Exito(dato: T) y Error(mensaje: String).",
+      "codigoInicial": "fun main() {\n    // Tu código aquí\n}",
+      "solucion": "sealed class Respuesta<out T> {\n    data class Exito<T>(val dato: T) : Respuesta<T>()\n    data class Error(val mensaje: String) : Respuesta<Nothing>()\n}\n\nfun buscarUsuario(id: Int): Respuesta<String> =\n    if (id == 1) Respuesta.Exito(\"Ana\") else Respuesta.Error(\"No encontrado\")\n\nfun main() {\n    when (val r = buscarUsuario(2)) {\n        is Respuesta.Exito -> println(r.dato)\n        is Respuesta.Error -> println(r.mensaje)\n    }\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "Declara la clase como sealed class Respuesta<out T>.",
+        "Error no tiene dato: puede extender Respuesta<Nothing>."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "sealed",
+          "descripcion": "Usa sealed",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-if-expresion",
+        "g-when",
+        "g-smart-cast",
+        "g-constructor",
+        "g-data-class",
+        "g-sealed",
+        "g-genericos"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "e12_1",
+      "codigo": "12.1",
+      "titulo": "Descargas en paralelo con corrutinas",
+      "moduloId": "m12",
+      "dificultad": "intermedio",
+      "tipo": "en_clase",
+      "enunciado": "Simula la descarga de 5 archivos con tiempos distintos (delay aleatorio) de forma paralela y compara el tiempo total con hacerlo en secuencia.",
+      "codigoInicial": "import kotlinx.coroutines.*\nimport kotlin.system.measureTimeMillis\n\nsuspend fun descargar(id: Int): String {\n    delay((500L..1500L).random())\n    return \"Archivo $id\"\n}\n\nfun main() = runBlocking {\n    // mide secuencial y paralelo con measureTimeMillis\n}",
+      "solucion": "import kotlinx.coroutines.*\nimport kotlin.system.measureTimeMillis\n\nsuspend fun descargar(id: Int): String {\n    delay((500L..1500L).random())\n    return \"Archivo $id\"\n}\n\nfun main() = runBlocking {\n    val secuencial = measureTimeMillis {\n        for (i in 1..5) descargar(i)\n    }\n    val paralelo = measureTimeMillis {\n        (1..5).map { async { descargar(it) } }.awaitAll()\n    }\n    println(\"Secuencial: $secuencial ms, paralelo: $paralelo ms\")\n}",
+      "solucionPublicada": true,
+      "pistas": [
+        "async lanza cada descarga sin esperar a la anterior.",
+        "awaitAll() espera a que terminen todas."
+      ],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "salida_contiene",
+          "esperado": "paralelo",
+          "descripcion": "La salida incluye «paralelo»",
+          "valor": null,
+          "entrada": null
+        },
+        {
+          "tipo": "codigo_contiene",
+          "valor": "async",
+          "descripcion": "Usa async",
+          "esperado": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [
+        "g-string-template",
+        "g-rangos",
+        "g-filter-map",
+        "g-lambda",
+        "g-corrutina",
+        "g-suspend",
+        "g-launch-async"
+      ],
+      "requisitos": [],
+      "rubrica": [],
+      "explicacion": [],
+      "desbloqueo": null
+    },
+    {
+      "id": "pf",
+      "codigo": "PF",
+      "titulo": "Proyecto final: Sistema de gestión de biblioteca",
+      "moduloId": "m12",
+      "dificultad": "reto",
+      "tipo": "proyecto",
+      "enunciado": "Aplicación de consola que integra todos los módulos del curso.",
+      "requisitos": [
+        "data class Libro(id, titulo, autor, anio, disponible) y data class Usuario(id, nombre).",
+        "enum class Genero para clasificar los libros.",
+        "sealed interface ResultadoOperacion con Exito y Error para préstamos y devoluciones.",
+        "Clase Biblioteca con colecciones mutables privadas y funciones para agregar libros, buscar por título o autor (con filter), prestar y devolver.",
+        "Límite de 3 préstamos por usuario, validado con una excepción personalizada.",
+        "Reportes: libros agrupados por género (groupBy), autor con más libros, libros disponibles ordenados por año.",
+        "Al menos una función de extensión, por ejemplo Libro.resumen().",
+        "Menú en consola con when y lectura segura con toIntOrNull.",
+        "Extra: simular una sincronización con servidor usando una corrutina con delay."
+      ],
+      "rubrica": [
+        {
+          "criterio": "Funcionamiento correcto",
+          "peso": 40
+        },
+        {
+          "criterio": "Uso idiomático de Kotlin (val, null safety, colecciones funcionales, data classes)",
+          "peso": 30
+        },
+        {
+          "criterio": "Organización del código",
+          "peso": 20
+        },
+        {
+          "criterio": "Manejo de errores",
+          "peso": 10
+        }
+      ],
+      "codigoInicial": "fun main() {\n    // Tu código aquí\n}",
+      "solucion": null,
+      "solucionPublicada": false,
+      "pistas": [],
+      "pruebas": [
+        {
+          "tipo": "compila",
+          "descripcion": "Compila sin errores",
+          "esperado": null,
+          "valor": null,
+          "entrada": null
+        }
+      ],
+      "conceptoIds": [],
+      "explicacion": [],
+      "desbloqueo": {
+        "modulosRequeridos": [
+          "m01",
+          "m02",
+          "m03",
+          "m04",
+          "m05",
+          "m06",
+          "m07",
+          "m08",
+          "m09",
+          "m10",
+          "m11"
+        ]
+      }
+    }
+  ],
+  "glosario": [
+    {
+      "id": "g-val",
+      "termino": "val",
+      "definicion": "Declara una variable de solo lectura (no se puede reasignar).",
+      "equivalencias": [
+        {
+          "texto": "constante",
+          "lenguajes": []
+        },
+        {
+          "texto": "final",
+          "lenguajes": [
+            "java"
+          ]
+        },
+        {
+          "texto": "const",
+          "lenguajes": [
+            "javascript"
+          ]
+        },
+        {
+          "texto": "inmutable",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "fundamentos"
+      ],
+      "moduloId": "m02",
+      "ejemplo": "val nombre = \"Ana\"\n// nombre = \"Luis\"  // Error",
+      "nombreCorto": "val",
+      "simbolo": "val",
+      "alternativas": []
+    },
+    {
+      "id": "g-var",
+      "termino": "var",
+      "definicion": "Declara una variable mutable (se puede reasignar).",
+      "equivalencias": [
+        {
+          "texto": "variable",
+          "lenguajes": []
+        },
+        {
+          "texto": "let",
+          "lenguajes": [
+            "javascript"
+          ]
+        },
+        {
+          "texto": "mutable",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "fundamentos"
+      ],
+      "moduloId": "m02",
+      "ejemplo": "var edad = 25\nedad = 26",
+      "nombreCorto": "var",
+      "simbolo": "var",
+      "alternativas": [
+        "g-val"
+      ]
+    },
+    {
+      "id": "g-inferencia",
+      "termino": "Inferencia de tipos",
+      "definicion": "El compilador deduce el tipo a partir del valor asignado.",
+      "equivalencias": [
+        {
+          "texto": "type inference",
+          "lenguajes": []
+        },
+        {
+          "texto": "var",
+          "lenguajes": [
+            "java"
+          ]
+        },
+        {
+          "texto": "auto",
+          "lenguajes": [
+            "cpp"
+          ]
+        }
+      ],
+      "categorias": [
+        "fundamentos"
+      ],
+      "moduloId": "m02",
+      "ejemplo": "val numero = 42   // Int\nval texto = \"Hola\" // String",
+      "nombreCorto": "Inferencia de tipos",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-string-template",
+      "termino": "String template (plantilla de texto)",
+      "definicion": "Insertar variables o expresiones dentro de un String con $ y ${}.",
+      "equivalencias": [
+        {
+          "texto": "interpolación",
+          "lenguajes": []
+        },
+        {
+          "texto": "concatenación",
+          "lenguajes": []
+        },
+        {
+          "texto": "f-string",
+          "lenguajes": [
+            "python"
+          ]
+        },
+        {
+          "texto": "template literal",
+          "lenguajes": [
+            "javascript"
+          ]
+        },
+        {
+          "texto": "String.format",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "fundamentos"
+      ],
+      "moduloId": "m02",
+      "ejemplo": "val nombre = \"Ana\"\nprintln(\"Hola $nombre, tienes ${nombre.length} letras\")",
+      "nombreCorto": "String template",
+      "simbolo": "$",
+      "alternativas": []
+    },
+    {
+      "id": "g-raw-string",
+      "termino": "Raw string",
+      "definicion": "String multilínea delimitado por triples comillas, sin necesidad de escapar caracteres.",
+      "equivalencias": [
+        {
+          "texto": "texto multilínea",
+          "lenguajes": []
+        },
+        {
+          "texto": "triple comilla",
+          "lenguajes": []
+        },
+        {
+          "texto": "text block",
+          "lenguajes": [
+            "java"
+          ]
+        },
+        {
+          "texto": "trimIndent",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "fundamentos"
+      ],
+      "moduloId": "m02",
+      "ejemplo": "val menu = \"\"\"\n    1. Café\n    2. Té\n\"\"\".trimIndent()",
+      "nombreCorto": "Raw string",
+      "simbolo": "\"\"\"",
+      "alternativas": []
+    },
+    {
+      "id": "g-conversion",
+      "termino": "Conversión de tipos",
+      "definicion": "Kotlin no convierte tipos numéricos automáticamente; se usan funciones como toInt(), toLong(), toIntOrNull().",
+      "equivalencias": [
+        {
+          "texto": "casting",
+          "lenguajes": []
+        },
+        {
+          "texto": "cast",
+          "lenguajes": []
+        },
+        {
+          "texto": "parse",
+          "lenguajes": []
+        },
+        {
+          "texto": "parseInt",
+          "lenguajes": []
+        },
+        {
+          "texto": "convertir",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "fundamentos"
+      ],
+      "moduloId": "m02",
+      "ejemplo": "val b: Long = 5.toLong()\nval n = \"123\".toInt()\nval seguro = \"abc\".toIntOrNull()  // null",
+      "nombreCorto": "Conversión de tipos",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-if-expresion",
+      "termino": "if como expresión",
+      "definicion": "if devuelve un valor, por eso Kotlin no tiene operador ternario.",
+      "equivalencias": [
+        {
+          "texto": "ternario",
+          "lenguajes": []
+        },
+        {
+          "texto": "operador ternario",
+          "lenguajes": []
+        },
+        {
+          "texto": "? :",
+          "lenguajes": []
+        },
+        {
+          "texto": "condicional",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "control_de_flujo"
+      ],
+      "moduloId": "m03",
+      "ejemplo": "val estado = if (edad >= 18) \"Mayor\" else \"Menor\"",
+      "nombreCorto": "if como expresión",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-when",
+      "termino": "when",
+      "definicion": "Estructura de selección múltiple que acepta valores, rangos, tipos y condiciones; puede devolver un valor.",
+      "equivalencias": [
+        {
+          "texto": "switch",
+          "lenguajes": []
+        },
+        {
+          "texto": "case",
+          "lenguajes": []
+        },
+        {
+          "texto": "match",
+          "lenguajes": [
+            "python",
+            "rust"
+          ]
+        },
+        {
+          "texto": "selección múltiple",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "control_de_flujo"
+      ],
+      "moduloId": "m03",
+      "ejemplo": "val letra = when (nota) {\n    in 90..100 -> \"A\"\n    in 80..89 -> \"B\"\n    else -> \"C\"\n}",
+      "nombreCorto": "when",
+      "simbolo": "when",
+      "alternativas": []
+    },
+    {
+      "id": "g-rangos",
+      "termino": "Rangos (.., until, downTo, step)",
+      "definicion": "Secuencias de valores usadas en ciclos y comprobaciones con in.",
+      "equivalencias": [
+        {
+          "texto": "range",
+          "lenguajes": []
+        },
+        {
+          "texto": "intervalo",
+          "lenguajes": []
+        },
+        {
+          "texto": "for i",
+          "lenguajes": []
+        },
+        {
+          "texto": "range()",
+          "lenguajes": [
+            "python"
+          ]
+        }
+      ],
+      "categorias": [
+        "control_de_flujo"
+      ],
+      "moduloId": "m03",
+      "ejemplo": "for (i in 1..5) print(i)          // incluye el 5\nfor (i in 1 until 5) print(i)     // excluye el 5\nfor (i in 10 downTo 0 step 2) print(i)",
+      "nombreCorto": "Rangos",
+      "simbolo": "..",
+      "alternativas": []
+    },
+    {
+      "id": "g-etiquetas",
+      "termino": "Etiquetas (break@ / continue@)",
+      "definicion": "Permiten romper o continuar un ciclo externo desde uno anidado.",
+      "equivalencias": [
+        {
+          "texto": "label",
+          "lenguajes": []
+        },
+        {
+          "texto": "break etiquetado",
+          "lenguajes": []
+        },
+        {
+          "texto": "ciclos anidados",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "control_de_flujo"
+      ],
+      "moduloId": "m03",
+      "ejemplo": "externo@ for (i in 1..3) {\n    for (j in 1..3) if (j == 2) break@externo\n}",
+      "nombreCorto": "Etiquetas",
+      "simbolo": "@",
+      "alternativas": []
+    },
+    {
+      "id": "g-unit",
+      "termino": "Unit",
+      "definicion": "Tipo de retorno de funciones que no devuelven un valor útil.",
+      "equivalencias": [
+        {
+          "texto": "void",
+          "lenguajes": []
+        },
+        {
+          "texto": "None",
+          "lenguajes": [
+            "python"
+          ]
+        },
+        {
+          "texto": "sin retorno",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "funciones"
+      ],
+      "moduloId": "m04",
+      "ejemplo": "fun saludar(nombre: String): Unit = println(\"Hola $nombre\")",
+      "nombreCorto": "Unit",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-parametros",
+      "termino": "Parámetros por defecto y nombrados",
+      "definicion": "Los parámetros pueden tener valor por defecto y pasarse por nombre en cualquier orden.",
+      "equivalencias": [
+        {
+          "texto": "sobrecarga",
+          "lenguajes": []
+        },
+        {
+          "texto": "overloading",
+          "lenguajes": []
+        },
+        {
+          "texto": "default parameters",
+          "lenguajes": []
+        },
+        {
+          "texto": "named arguments",
+          "lenguajes": []
+        },
+        {
+          "texto": "kwargs",
+          "lenguajes": [
+            "python"
+          ]
+        }
+      ],
+      "categorias": [
+        "funciones"
+      ],
+      "moduloId": "m04",
+      "ejemplo": "fun crear(nombre: String, rol: String = \"invitado\") = \"$nombre - $rol\"\ncrear(rol = \"admin\", nombre = \"Eva\")",
+      "nombreCorto": "Parámetros por defecto y nombrados",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-vararg",
+      "termino": "vararg",
+      "definicion": "Permite que una función reciba un número variable de argumentos.",
+      "equivalencias": [
+        {
+          "texto": "argumentos variables",
+          "lenguajes": []
+        },
+        {
+          "texto": "varargs",
+          "lenguajes": []
+        },
+        {
+          "texto": "...args",
+          "lenguajes": [
+            "java",
+            "javascript"
+          ]
+        },
+        {
+          "texto": "*args",
+          "lenguajes": [
+            "python"
+          ]
+        }
+      ],
+      "categorias": [
+        "funciones"
+      ],
+      "moduloId": "m04",
+      "ejemplo": "fun promedio(vararg n: Double) = n.sum() / n.size",
+      "nombreCorto": "vararg",
+      "simbolo": "vararg",
+      "alternativas": []
+    },
+    {
+      "id": "g-extension",
+      "termino": "Función de extensión",
+      "definicion": "Agrega funciones a una clase existente sin heredar ni modificarla.",
+      "equivalencias": [
+        {
+          "texto": "extension function",
+          "lenguajes": []
+        },
+        {
+          "texto": "método de extensión",
+          "lenguajes": [
+            "csharp"
+          ]
+        },
+        {
+          "texto": "monkey patching",
+          "lenguajes": []
+        },
+        {
+          "texto": "prototype",
+          "lenguajes": [
+            "javascript"
+          ]
+        }
+      ],
+      "categorias": [
+        "funciones"
+      ],
+      "moduloId": "m04",
+      "ejemplo": "fun Int.esPar() = this % 2 == 0\n4.esPar()  // true",
+      "nombreCorto": "Función de extensión",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-nulable",
+      "termino": "Tipo nulable (?)",
+      "definicion": "Un tipo con ? puede contener null; sin ? nunca puede ser null.",
+      "equivalencias": [
+        {
+          "texto": "null",
+          "lenguajes": []
+        },
+        {
+          "texto": "nullable",
+          "lenguajes": []
+        },
+        {
+          "texto": "Optional",
+          "lenguajes": [
+            "java"
+          ]
+        },
+        {
+          "texto": "NullPointerException",
+          "lenguajes": []
+        },
+        {
+          "texto": "NPE",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "null_safety"
+      ],
+      "moduloId": "m05",
+      "ejemplo": "var apodo: String? = null\nvar nombre: String = \"Ana\"  // no puede ser null",
+      "nombreCorto": "Tipo nulable",
+      "simbolo": "?",
+      "alternativas": []
+    },
+    {
+      "id": "g-llamada-segura",
+      "termino": "Llamada segura (?.)",
+      "definicion": "Accede a una propiedad o método solo si el valor no es null; si lo es, devuelve null.",
+      "equivalencias": [
+        {
+          "texto": "safe call",
+          "lenguajes": []
+        },
+        {
+          "texto": "optional chaining",
+          "lenguajes": [
+            "javascript",
+            "swift"
+          ]
+        }
+      ],
+      "categorias": [
+        "null_safety"
+      ],
+      "moduloId": "m05",
+      "ejemplo": "val largo = apodo?.length  // Int?",
+      "nombreCorto": "Llamada segura",
+      "simbolo": "?.",
+      "alternativas": []
+    },
+    {
+      "id": "g-elvis",
+      "termino": "Operador Elvis (?:)",
+      "definicion": "Devuelve un valor alternativo cuando la expresión de la izquierda es null.",
+      "equivalencias": [
+        {
+          "texto": "valor por defecto",
+          "lenguajes": []
+        },
+        {
+          "texto": "null coalescing",
+          "lenguajes": []
+        },
+        {
+          "texto": "??",
+          "lenguajes": [
+            "csharp",
+            "javascript",
+            "swift"
+          ]
+        },
+        {
+          "texto": "getOrElse",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "null_safety"
+      ],
+      "moduloId": "m05",
+      "ejemplo": "val largo = apodo?.length ?: 0\nval valor = entrada ?: return",
+      "nombreCorto": "Operador Elvis",
+      "simbolo": "?:",
+      "alternativas": []
+    },
+    {
+      "id": "g-asercion",
+      "termino": "Aserción no-nula (!!)",
+      "definicion": "Fuerza a tratar un valor como no nulo; lanza NullPointerException si es null. Evitarla.",
+      "equivalencias": [
+        {
+          "texto": "not-null assertion",
+          "lenguajes": []
+        },
+        {
+          "texto": "force unwrap",
+          "lenguajes": [
+            "swift"
+          ]
+        },
+        {
+          "texto": "bang bang",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "null_safety"
+      ],
+      "moduloId": "m05",
+      "ejemplo": "val x = apodo!!.length  // peligroso",
+      "nombreCorto": "Aserción no-nula",
+      "simbolo": "!!",
+      "alternativas": [
+        "g-llamada-segura",
+        "g-elvis"
+      ]
+    },
+    {
+      "id": "g-smart-cast",
+      "termino": "Smart cast",
+      "definicion": "Tras comprobar un tipo o que no es null, Kotlin trata la variable automáticamente con el tipo correcto.",
+      "equivalencias": [
+        {
+          "texto": "casting automático",
+          "lenguajes": []
+        },
+        {
+          "texto": "instanceof",
+          "lenguajes": []
+        },
+        {
+          "texto": "is",
+          "lenguajes": []
+        },
+        {
+          "texto": "type narrowing",
+          "lenguajes": [
+            "typescript"
+          ]
+        }
+      ],
+      "categorias": [
+        "null_safety",
+        "poo"
+      ],
+      "moduloId": "m05",
+      "ejemplo": "if (texto != null) println(texto.length)\nif (animal is Perro) animal.ladrar()",
+      "nombreCorto": "Smart cast",
+      "simbolo": "is",
+      "alternativas": []
+    },
+    {
+      "id": "g-lateinit",
+      "termino": "lateinit",
+      "definicion": "Permite declarar una propiedad var no nula que se inicializará después.",
+      "equivalencias": [
+        {
+          "texto": "inicialización tardía",
+          "lenguajes": []
+        },
+        {
+          "texto": "late initialization",
+          "lenguajes": []
+        },
+        {
+          "texto": "lazy",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "null_safety"
+      ],
+      "moduloId": "m05",
+      "ejemplo": "lateinit var configuracion: String",
+      "nombreCorto": "lateinit",
+      "simbolo": "lateinit",
+      "alternativas": []
+    },
+    {
+      "id": "g-list",
+      "termino": "List / MutableList",
+      "definicion": "Colección ordenada; listOf crea una de solo lectura y mutableListOf una modificable.",
+      "equivalencias": [
+        {
+          "texto": "array",
+          "lenguajes": []
+        },
+        {
+          "texto": "arreglo",
+          "lenguajes": []
+        },
+        {
+          "texto": "ArrayList",
+          "lenguajes": [
+            "java"
+          ]
+        },
+        {
+          "texto": "lista",
+          "lenguajes": []
+        },
+        {
+          "texto": "vector",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "colecciones"
+      ],
+      "moduloId": "m06",
+      "ejemplo": "val lista = listOf(1, 2, 3)\nval mutable = mutableListOf(1, 2)\nmutable.add(3)",
+      "nombreCorto": "List / MutableList",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-set",
+      "termino": "Set",
+      "definicion": "Colección sin elementos duplicados.",
+      "equivalencias": [
+        {
+          "texto": "conjunto",
+          "lenguajes": []
+        },
+        {
+          "texto": "HashSet",
+          "lenguajes": []
+        },
+        {
+          "texto": "sin duplicados",
+          "lenguajes": []
+        },
+        {
+          "texto": "distinct",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "colecciones"
+      ],
+      "moduloId": "m06",
+      "ejemplo": "val s = setOf(\"a\", \"b\", \"a\")  // [a, b]",
+      "nombreCorto": "Set",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-map",
+      "termino": "Map",
+      "definicion": "Colección de pares clave-valor.",
+      "equivalencias": [
+        {
+          "texto": "diccionario",
+          "lenguajes": []
+        },
+        {
+          "texto": "dict",
+          "lenguajes": [
+            "python"
+          ]
+        },
+        {
+          "texto": "HashMap",
+          "lenguajes": []
+        },
+        {
+          "texto": "objeto",
+          "lenguajes": [
+            "javascript"
+          ]
+        },
+        {
+          "texto": "clave valor",
+          "lenguajes": []
+        },
+        {
+          "texto": "to",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "colecciones"
+      ],
+      "moduloId": "m06",
+      "ejemplo": "val mapa = mapOf(\"MX\" to \"México\")\nprintln(mapa[\"MX\"])",
+      "nombreCorto": "Map",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-filter-map",
+      "termino": "filter / map",
+      "definicion": "filter conserva los elementos que cumplen una condición; map transforma cada elemento.",
+      "equivalencias": [
+        {
+          "texto": "filtrar",
+          "lenguajes": []
+        },
+        {
+          "texto": "transformar",
+          "lenguajes": []
+        },
+        {
+          "texto": "list comprehension",
+          "lenguajes": [
+            "python"
+          ]
+        },
+        {
+          "texto": "streams",
+          "lenguajes": [
+            "java"
+          ]
+        },
+        {
+          "texto": "select",
+          "lenguajes": []
+        },
+        {
+          "texto": "where",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "colecciones",
+        "lambdas"
+      ],
+      "moduloId": "m06",
+      "ejemplo": "listOf(1, 2, 3, 4).filter { it % 2 == 0 }.map { it * 10 }  // [20, 40]",
+      "nombreCorto": "filter / map",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-reduce-fold",
+      "termino": "reduce / fold",
+      "definicion": "Acumulan los elementos de una colección en un solo valor; fold recibe un valor inicial.",
+      "equivalencias": [
+        {
+          "texto": "acumular",
+          "lenguajes": []
+        },
+        {
+          "texto": "sumar todo",
+          "lenguajes": []
+        },
+        {
+          "texto": "aggregate",
+          "lenguajes": []
+        },
+        {
+          "texto": "reducir",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "colecciones",
+        "lambdas"
+      ],
+      "moduloId": "m06",
+      "ejemplo": "listOf(1, 2, 3).fold(10) { acc, n -> acc + n }  // 16",
+      "nombreCorto": "reduce / fold",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-groupby",
+      "termino": "groupBy",
+      "definicion": "Agrupa elementos en un Map según una clave calculada.",
+      "equivalencias": [
+        {
+          "texto": "agrupar",
+          "lenguajes": []
+        },
+        {
+          "texto": "GROUP BY",
+          "lenguajes": [
+            "sql"
+          ]
+        },
+        {
+          "texto": "clasificar",
+          "lenguajes": []
+        },
+        {
+          "texto": "groupingBy",
+          "lenguajes": []
+        },
+        {
+          "texto": "eachCount",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "colecciones"
+      ],
+      "moduloId": "m06",
+      "ejemplo": "listOf(\"kotlin\", \"java\", \"kafka\").groupBy { it.first() }",
+      "nombreCorto": "groupBy",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-sequence",
+      "termino": "Sequence",
+      "definicion": "Colección de evaluación perezosa que evita crear listas intermedias.",
+      "equivalencias": [
+        {
+          "texto": "lazy",
+          "lenguajes": []
+        },
+        {
+          "texto": "evaluación perezosa",
+          "lenguajes": []
+        },
+        {
+          "texto": "stream",
+          "lenguajes": [
+            "java"
+          ]
+        },
+        {
+          "texto": "generator",
+          "lenguajes": [
+            "python"
+          ]
+        },
+        {
+          "texto": "asSequence",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "colecciones"
+      ],
+      "moduloId": "m06",
+      "ejemplo": "(1..1_000_000).asSequence().filter { it % 3 == 0 }.take(5).toList()",
+      "nombreCorto": "Sequence",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-lambda",
+      "termino": "Lambda",
+      "definicion": "Función anónima escrita entre llaves; it es el nombre implícito cuando tiene un solo parámetro.",
+      "equivalencias": [
+        {
+          "texto": "función anónima",
+          "lenguajes": []
+        },
+        {
+          "texto": "arrow function",
+          "lenguajes": [
+            "javascript"
+          ]
+        },
+        {
+          "texto": "closure",
+          "lenguajes": []
+        },
+        {
+          "texto": "it",
+          "lenguajes": []
+        },
+        {
+          "texto": "=>",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "lambdas"
+      ],
+      "moduloId": "m07",
+      "ejemplo": "val sumar = { a: Int, b: Int -> a + b }\nlistOf(1, 2).map { it * 2 }",
+      "nombreCorto": "Lambda",
+      "simbolo": "->",
+      "alternativas": []
+    },
+    {
+      "id": "g-orden-superior",
+      "termino": "Función de orden superior",
+      "definicion": "Función que recibe otra función como parámetro o la devuelve.",
+      "equivalencias": [
+        {
+          "texto": "higher-order function",
+          "lenguajes": []
+        },
+        {
+          "texto": "callback",
+          "lenguajes": []
+        },
+        {
+          "texto": "trailing lambda",
+          "lenguajes": []
+        },
+        {
+          "texto": "referencia a función",
+          "lenguajes": []
+        },
+        {
+          "texto": "::",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "lambdas"
+      ],
+      "moduloId": "m07",
+      "ejemplo": "fun operar(a: Int, b: Int, f: (Int, Int) -> Int) = f(a, b)\noperar(3, 4) { x, y -> x * y }",
+      "nombreCorto": "Función de orden superior",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-scope",
+      "termino": "Scope functions (let, run, with, apply, also)",
+      "definicion": "Funciones que ejecutan un bloque en el contexto de un objeto; difieren en cómo lo referencian y qué devuelven.",
+      "equivalencias": [
+        {
+          "texto": "let",
+          "lenguajes": []
+        },
+        {
+          "texto": "apply",
+          "lenguajes": []
+        },
+        {
+          "texto": "also",
+          "lenguajes": []
+        },
+        {
+          "texto": "run",
+          "lenguajes": []
+        },
+        {
+          "texto": "with",
+          "lenguajes": []
+        },
+        {
+          "texto": "builder",
+          "lenguajes": []
+        },
+        {
+          "texto": "configurar objeto",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "lambdas"
+      ],
+      "moduloId": "m07",
+      "ejemplo": "val lista = mutableListOf<String>().apply { add(\"uno\") }\ncorreo?.let { println(it) }",
+      "nombreCorto": "Scope functions",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-constructor",
+      "termino": "Constructor primario",
+      "definicion": "Constructor declarado en la cabecera de la clase; con val/var crea propiedades directamente.",
+      "equivalencias": [
+        {
+          "texto": "constructor",
+          "lenguajes": []
+        },
+        {
+          "texto": "new",
+          "lenguajes": []
+        },
+        {
+          "texto": "__init__",
+          "lenguajes": [
+            "python"
+          ]
+        },
+        {
+          "texto": "init",
+          "lenguajes": []
+        },
+        {
+          "texto": "constructor secundario",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "poo"
+      ],
+      "moduloId": "m08",
+      "ejemplo": "class Persona(val nombre: String, var edad: Int) {\n    init { require(edad >= 0) }\n}",
+      "nombreCorto": "Constructor primario",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-propiedades",
+      "termino": "Propiedades (get / set / field)",
+      "definicion": "Kotlin genera getters y setters automáticamente; se pueden personalizar con get() y set().",
+      "equivalencias": [
+        {
+          "texto": "getter",
+          "lenguajes": []
+        },
+        {
+          "texto": "setter",
+          "lenguajes": []
+        },
+        {
+          "texto": "atributo",
+          "lenguajes": []
+        },
+        {
+          "texto": "campo",
+          "lenguajes": []
+        },
+        {
+          "texto": "encapsulamiento",
+          "lenguajes": []
+        },
+        {
+          "texto": "backing field",
+          "lenguajes": []
+        },
+        {
+          "texto": "private set",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "poo"
+      ],
+      "moduloId": "m08",
+      "ejemplo": "val area: Double\n    get() = ancho * alto",
+      "nombreCorto": "Propiedades",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-open-override",
+      "termino": "open / override",
+      "definicion": "Las clases y métodos son final por defecto; open permite heredar y override sobrescribir.",
+      "equivalencias": [
+        {
+          "texto": "herencia",
+          "lenguajes": []
+        },
+        {
+          "texto": "extends",
+          "lenguajes": []
+        },
+        {
+          "texto": "final",
+          "lenguajes": []
+        },
+        {
+          "texto": "sobrescribir",
+          "lenguajes": []
+        },
+        {
+          "texto": "@Override",
+          "lenguajes": []
+        },
+        {
+          "texto": "inheritance",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "poo"
+      ],
+      "moduloId": "m08",
+      "ejemplo": "open class Animal { open fun sonido() = \"...\" }\nclass Perro : Animal() { override fun sonido() = \"Guau\" }",
+      "nombreCorto": "open / override",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-interface",
+      "termino": "Interface / abstract class",
+      "definicion": "Interfaces definen contratos (pueden tener implementación por defecto); las clases abstractas no se instancian.",
+      "equivalencias": [
+        {
+          "texto": "interfaz",
+          "lenguajes": []
+        },
+        {
+          "texto": "implements",
+          "lenguajes": []
+        },
+        {
+          "texto": "abstract",
+          "lenguajes": []
+        },
+        {
+          "texto": "protocolo",
+          "lenguajes": [
+            "swift"
+          ]
+        },
+        {
+          "texto": "polimorfismo",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "poo"
+      ],
+      "moduloId": "m08",
+      "ejemplo": "interface Imprimible { fun imprimir() }\nabstract class Figura { abstract fun area(): Double }",
+      "nombreCorto": "Interface / abstract class",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-visibilidad",
+      "termino": "Visibilidad (private, protected, internal)",
+      "definicion": "Modificadores de acceso; public es el valor por defecto e internal limita al módulo.",
+      "equivalencias": [
+        {
+          "texto": "modificadores de acceso",
+          "lenguajes": []
+        },
+        {
+          "texto": "public",
+          "lenguajes": []
+        },
+        {
+          "texto": "package-private",
+          "lenguajes": []
+        },
+        {
+          "texto": "encapsulamiento",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "poo"
+      ],
+      "moduloId": "m08",
+      "ejemplo": "private val secreto = 1\ninternal fun util() {}",
+      "nombreCorto": "Visibilidad",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-data-class",
+      "termino": "data class",
+      "definicion": "Clase para guardar datos que genera equals, hashCode, toString, copy y desestructuración.",
+      "equivalencias": [
+        {
+          "texto": "record",
+          "lenguajes": [
+            "java"
+          ]
+        },
+        {
+          "texto": "POJO",
+          "lenguajes": []
+        },
+        {
+          "texto": "DTO",
+          "lenguajes": []
+        },
+        {
+          "texto": "modelo",
+          "lenguajes": []
+        },
+        {
+          "texto": "struct",
+          "lenguajes": []
+        },
+        {
+          "texto": "dataclass",
+          "lenguajes": [
+            "python"
+          ]
+        },
+        {
+          "texto": "copy",
+          "lenguajes": []
+        },
+        {
+          "texto": "desestructuración",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "clases_especiales"
+      ],
+      "moduloId": "m09",
+      "ejemplo": "data class Producto(val nombre: String, val precio: Double)\nval p2 = p1.copy(precio = 10.0)",
+      "nombreCorto": "data class",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-enum",
+      "termino": "enum class",
+      "definicion": "Conjunto fijo de constantes que pueden tener propiedades y funciones.",
+      "equivalencias": [
+        {
+          "texto": "enum",
+          "lenguajes": []
+        },
+        {
+          "texto": "enumeración",
+          "lenguajes": []
+        },
+        {
+          "texto": "constantes",
+          "lenguajes": []
+        },
+        {
+          "texto": "entries",
+          "lenguajes": []
+        },
+        {
+          "texto": "values()",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "clases_especiales"
+      ],
+      "moduloId": "m09",
+      "ejemplo": "enum class Color(val hex: String) { ROJO(\"#F00\"), VERDE(\"#0F0\") }",
+      "nombreCorto": "enum class",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-sealed",
+      "termino": "sealed class / sealed interface",
+      "definicion": "Jerarquía cerrada de subtipos conocidos en compilación; when la verifica de forma exhaustiva.",
+      "equivalencias": [
+        {
+          "texto": "clase sellada",
+          "lenguajes": []
+        },
+        {
+          "texto": "union type",
+          "lenguajes": []
+        },
+        {
+          "texto": "estados de pantalla",
+          "lenguajes": []
+        },
+        {
+          "texto": "UiState",
+          "lenguajes": []
+        },
+        {
+          "texto": "ADT",
+          "lenguajes": []
+        },
+        {
+          "texto": "Result",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "clases_especiales"
+      ],
+      "moduloId": "m09",
+      "ejemplo": "sealed interface Estado {\n    data object Cargando : Estado\n    data class Exito(val dato: String) : Estado\n}",
+      "nombreCorto": "sealed class / sealed interface",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-object",
+      "termino": "object (singleton)",
+      "definicion": "Declara una clase con una única instancia creada automáticamente.",
+      "equivalencias": [
+        {
+          "texto": "singleton",
+          "lenguajes": []
+        },
+        {
+          "texto": "instancia única",
+          "lenguajes": []
+        },
+        {
+          "texto": "objeto global",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "clases_especiales"
+      ],
+      "moduloId": "m09",
+      "ejemplo": "object Configuracion { var modoOscuro = false }",
+      "nombreCorto": "object",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-companion",
+      "termino": "companion object",
+      "definicion": "Objeto ligado a una clase para miembros compartidos por todas sus instancias.",
+      "equivalencias": [
+        {
+          "texto": "static",
+          "lenguajes": []
+        },
+        {
+          "texto": "método estático",
+          "lenguajes": []
+        },
+        {
+          "texto": "variable estática",
+          "lenguajes": []
+        },
+        {
+          "texto": "factory",
+          "lenguajes": []
+        },
+        {
+          "texto": "const val",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "clases_especiales"
+      ],
+      "moduloId": "m09",
+      "ejemplo": "class Usuario private constructor(val nombre: String) {\n    companion object {\n        fun crear(nombre: String) = Usuario(nombre)\n    }\n}",
+      "nombreCorto": "companion object",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-try",
+      "termino": "try / catch como expresión",
+      "definicion": "try devuelve un valor; Kotlin no tiene excepciones verificadas (checked).",
+      "equivalencias": [
+        {
+          "texto": "excepción",
+          "lenguajes": []
+        },
+        {
+          "texto": "exception",
+          "lenguajes": []
+        },
+        {
+          "texto": "throws",
+          "lenguajes": []
+        },
+        {
+          "texto": "try-except",
+          "lenguajes": [
+            "python"
+          ]
+        },
+        {
+          "texto": "finally",
+          "lenguajes": []
+        },
+        {
+          "texto": "throw",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "errores"
+      ],
+      "moduloId": "m10",
+      "ejemplo": "val n = try { texto.toInt() } catch (e: NumberFormatException) { 0 }",
+      "nombreCorto": "try / catch como expresión",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-require",
+      "termino": "require / check",
+      "definicion": "Validaciones rápidas: require para argumentos (IllegalArgumentException) y check para estado (IllegalStateException).",
+      "equivalencias": [
+        {
+          "texto": "assert",
+          "lenguajes": []
+        },
+        {
+          "texto": "validación",
+          "lenguajes": []
+        },
+        {
+          "texto": "precondición",
+          "lenguajes": []
+        },
+        {
+          "texto": "guard",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "errores"
+      ],
+      "moduloId": "m10",
+      "ejemplo": "require(edad >= 0) { \"Edad inválida\" }",
+      "nombreCorto": "require / check",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-runcatching",
+      "termino": "runCatching / Result",
+      "definicion": "Ejecuta un bloque y encapsula el éxito o el error en un objeto Result.",
+      "equivalencias": [
+        {
+          "texto": "Result",
+          "lenguajes": []
+        },
+        {
+          "texto": "Either",
+          "lenguajes": []
+        },
+        {
+          "texto": "manejo funcional de errores",
+          "lenguajes": []
+        },
+        {
+          "texto": "onSuccess",
+          "lenguajes": []
+        },
+        {
+          "texto": "onFailure",
+          "lenguajes": []
+        },
+        {
+          "texto": "getOrDefault",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "errores"
+      ],
+      "moduloId": "m10",
+      "ejemplo": "val v = runCatching { \"x\".toInt() }.getOrDefault(0)",
+      "nombreCorto": "runCatching / Result",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-genericos",
+      "termino": "Genéricos <T>",
+      "definicion": "Permiten escribir clases y funciones que trabajan con cualquier tipo manteniendo la seguridad de tipos.",
+      "equivalencias": [
+        {
+          "texto": "generics",
+          "lenguajes": []
+        },
+        {
+          "texto": "templates",
+          "lenguajes": [
+            "cpp"
+          ]
+        },
+        {
+          "texto": "tipo paramétrico",
+          "lenguajes": []
+        },
+        {
+          "texto": "out",
+          "lenguajes": []
+        },
+        {
+          "texto": "in",
+          "lenguajes": []
+        },
+        {
+          "texto": "varianza",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "genericos"
+      ],
+      "moduloId": "m11",
+      "ejemplo": "class Caja<T>(val contenido: T)\nfun <T : Comparable<T>> mayor(a: T, b: T) = if (a > b) a else b",
+      "nombreCorto": "Genéricos <T>",
+      "simbolo": "<T>",
+      "alternativas": []
+    },
+    {
+      "id": "g-corrutina",
+      "termino": "Corrutina",
+      "definicion": "Tarea ligera que puede suspenderse sin bloquear el hilo.",
+      "equivalencias": [
+        {
+          "texto": "coroutine",
+          "lenguajes": []
+        },
+        {
+          "texto": "async",
+          "lenguajes": []
+        },
+        {
+          "texto": "await",
+          "lenguajes": []
+        },
+        {
+          "texto": "hilos",
+          "lenguajes": []
+        },
+        {
+          "texto": "threads",
+          "lenguajes": []
+        },
+        {
+          "texto": "asincronía",
+          "lenguajes": []
+        },
+        {
+          "texto": "promesa",
+          "lenguajes": [
+            "javascript"
+          ]
+        },
+        {
+          "texto": "Future",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "corrutinas"
+      ],
+      "moduloId": "m12",
+      "ejemplo": "fun main() = runBlocking {\n    val a = async { descargarDatos(1) }\n    println(a.await())\n}",
+      "nombreCorto": "Corrutina",
+      "simbolo": null,
+      "alternativas": []
+    },
+    {
+      "id": "g-suspend",
+      "termino": "suspend",
+      "definicion": "Marca una función que puede pausarse; solo se llama desde otra corrutina o función suspend.",
+      "equivalencias": [
+        {
+          "texto": "async function",
+          "lenguajes": [
+            "javascript"
+          ]
+        },
+        {
+          "texto": "función suspendida",
+          "lenguajes": []
+        },
+        {
+          "texto": "delay",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "corrutinas"
+      ],
+      "moduloId": "m12",
+      "ejemplo": "suspend fun cargar(): String { delay(1000); return \"Listo\" }",
+      "nombreCorto": "suspend",
+      "simbolo": "suspend",
+      "alternativas": []
+    },
+    {
+      "id": "g-launch-async",
+      "termino": "launch / async / runBlocking",
+      "definicion": "Constructores de corrutinas: launch no devuelve valor, async devuelve un Deferred con await, runBlocking bloquea (solo main o pruebas).",
+      "equivalencias": [
+        {
+          "texto": "Deferred",
+          "lenguajes": []
+        },
+        {
+          "texto": "await",
+          "lenguajes": []
+        },
+        {
+          "texto": "Job",
+          "lenguajes": []
+        },
+        {
+          "texto": "CoroutineScope",
+          "lenguajes": []
+        },
+        {
+          "texto": "viewModelScope",
+          "lenguajes": []
+        }
+      ],
+      "categorias": [
+        "corrutinas"
+      ],
+      "moduloId": "m12",
+      "ejemplo": "launch { println(\"En segundo plano\") }\nval r = async { 42 }.await()",
+      "nombreCorto": "launch / async / runBlocking",
+      "simbolo": null,
+      "alternativas": []
+    }
+  ],
+  "recursos": [
+    {
+      "id": "r-docs",
+      "nombre": "Documentación oficial de Kotlin",
+      "url": "https://kotlinlang.org/docs/home.html",
+      "tipo": "documentacion",
+      "descripcion": "Referencia completa del lenguaje, con ejemplos ejecutables.",
+      "moduloId": null
+    },
+    {
+      "id": "r-playground",
+      "nombre": "Kotlin Playground",
+      "url": "https://play.kotlinlang.org",
+      "tipo": "herramienta",
+      "descripcion": "Editor en el navegador para ejecutar Kotlin sin instalar nada.",
+      "moduloId": "m01"
+    },
+    {
+      "id": "r-koans",
+      "nombre": "Kotlin Koans",
+      "url": "https://play.kotlinlang.org/koans",
+      "tipo": "practica",
+      "descripcion": "Ejercicios interactivos oficiales; ideales como tarea extra.",
+      "moduloId": null
+    },
+    {
+      "id": "r-intellij",
+      "nombre": "IntelliJ IDEA Community",
+      "url": "https://www.jetbrains.com/idea/download/",
+      "tipo": "herramienta",
+      "descripcion": "IDE gratuito recomendado para el curso.",
+      "moduloId": "m01"
+    },
+    {
+      "id": "r-null-safety",
+      "nombre": "Null safety (documentación)",
+      "url": "https://kotlinlang.org/docs/null-safety.html",
+      "tipo": "lectura",
+      "descripcion": "Guía oficial de tipos nulables y operadores seguros.",
+      "moduloId": "m05"
+    },
+    {
+      "id": "r-scope",
+      "nombre": "Scope functions (documentación)",
+      "url": "https://kotlinlang.org/docs/scope-functions.html",
+      "tipo": "lectura",
+      "descripcion": "Comparativa oficial de let, run, with, apply y also.",
+      "moduloId": "m07"
+    },
+    {
+      "id": "r-coroutines",
+      "nombre": "Guía de corrutinas",
+      "url": "https://kotlinlang.org/docs/coroutines-guide.html",
+      "tipo": "lectura",
+      "descripcion": "Introducción oficial a corrutinas, launch, async y Flow.",
+      "moduloId": "m12"
+    }
+  ],
+  "esquema": 2
+}
