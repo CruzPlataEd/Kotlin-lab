@@ -1,58 +1,78 @@
 package com.urbanercracker.kotlinlab.ui.theme
 
-import android.app.Activity
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.ReadOnlyComposable
+import androidx.compose.runtime.staticCompositionLocalOf
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
-)
+private val LocalColors = staticCompositionLocalOf { LightColors }
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+/** Acceso a la paleta desde cualquier pantalla: KotlinLabTema.colores.completadoFondo */
+object ColorsApp {
+    val colors: ColorsKotlinLab
+        @Composable @ReadOnlyComposable
+        get() = LocalColors.current
+}
 
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
-)
-
+/**
+ * Envuelve toda la app (en MainActivity, dentro de setContent).
+ * Sigue el modo del teléfono: si el usuario activa el tema oscuro en Ajustes del sistema,
+ * la app cambia de colores sola.
+ */
 @Composable
-fun KotlinLabTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
-    content: @Composable () -> Unit
-) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+fun KotlinLabTheme(content: @Composable () -> Unit) {
+    val oscuro = isSystemInDarkTheme()   // true si el teléfono está en modo oscuro
+    val colors = if (oscuro) LightColors else DarkColors
+    CompositionLocalProvider(LocalColors provides colors) {
+        MaterialTheme(colorScheme = colors.aMaterial(oscuro), content = content)
     }
+}
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content
+/**
+ * Traduce la paleta a los roles de Material 3, para que los componentes que no
+ * personalizas (Card, TextField, Switch, Dialog...) ya salgan con los colores del diseño.
+ */
+private fun ColorsKotlinLab.aMaterial(oscuro: Boolean): ColorScheme {
+    val base = if (oscuro) darkColorScheme() else lightColorScheme()
+    return base.copy(
+        primary = primario,
+        onPrimary = sobrePrimario,
+        primaryContainer = primarioContenedor,
+        onPrimaryContainer = sobrePrimarioContenedor,
+        inversePrimary = destacada,
+        secondary = completado,
+        onSecondary = sobreCompletado,
+        secondaryContainer = completadoFondo,
+        onSecondaryContainer = sobreCompletadoFondo,
+        tertiary = reto,
+        onTertiary = sobreReto,
+        tertiaryContainer = reto,
+        onTertiaryContainer = sobreReto,
+        background = fondo,
+        onBackground = titulo,
+        surface = superficie,
+        onSurface = texto,
+        surfaceVariant = superficieSuave,
+        onSurfaceVariant = textoSecundario,
+        surfaceTint = primario,
+        surfaceBright = superficie,
+        surfaceDim = fondo,
+        surfaceContainerLowest = superficie,
+        surfaceContainerLow = superficie,
+        surfaceContainer = superficie,
+        surfaceContainerHigh = superficieSuave,
+        surfaceContainerHighest = superficie,   // Card() por defecto queda como en el diseño
+        outline = borde,
+        outlineVariant = borde,
+        error = error,
+        onError = sobreError,
+        errorContainer = errorFondo,
+        onErrorContainer = sobreErrorFondo,
+        scrim = velo,
     )
 }
