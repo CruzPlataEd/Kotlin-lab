@@ -27,7 +27,7 @@ object ColorsApp {
 @Composable
 fun KotlinLabTheme(content: @Composable () -> Unit) {
     val oscuro = isSystemInDarkTheme()   // true si el teléfono está en modo oscuro
-    val colors = if (oscuro) LightColors else DarkColors
+    val colors = if (oscuro) DarkColors else LightColors
     CompositionLocalProvider(LocalColors provides colors) {
         MaterialTheme(colorScheme = colors.aMaterial(oscuro), content = content)
     }
